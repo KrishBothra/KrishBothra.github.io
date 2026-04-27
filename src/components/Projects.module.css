@@ -20,6 +20,7 @@
   transition: all 0.25s;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .card::after {
@@ -75,6 +76,17 @@
 }
 
 .stat::before { content: '↗'; font-size: 10px; }
+
+.viewHint {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s;
+  letter-spacing: 0.06em;
+}
+
+.card:hover .viewHint { opacity: 1; }
 
 @media (max-width: 900px) {
   .section { padding: 4rem 2rem; }

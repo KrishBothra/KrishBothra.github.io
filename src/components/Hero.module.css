@@ -15,7 +15,7 @@
   top: -200px; right: -200px;
   width: 600px; height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,240,96,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(197,5,12,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -70,10 +70,10 @@
 
 .btnPrimary {
   background: var(--accent);
-  color: #0b0c0e;
+  color: #ffffff;
   font-weight: 500;
 }
-.btnPrimary:hover { background: #deff80; transform: translateY(-1px); }
+.btnPrimary:hover { background: #a30009; transform: translateY(-1px); }
 
 .btnGhost {
   background: transparent;
@@ -103,7 +103,7 @@
   position: absolute;
   inset: -1px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(200,240,96,0.15), transparent 60%, rgba(96,212,240,0.08));
+  background: linear-gradient(135deg, rgba(197,5,12,0.12), transparent 60%, rgba(155,0,0,0.06));
   z-index: -1;
 }
 
