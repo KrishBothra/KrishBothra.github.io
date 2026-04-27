@@ -37,11 +37,27 @@
 .card:hover::after { transform: scaleX(1); }
 .card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
 
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
 .name {
   font-family: var(--serif);
   font-size: 1.25rem;
   line-height: 1.2;
 }
+
+.githubLink {
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: color 0.2s;
+  padding-top: 2px;
+}
+
+.githubLink:hover { color: var(--accent); }
 
 .tags {
   display: flex;
