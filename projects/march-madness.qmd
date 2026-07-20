@@ -1,0 +1,12 @@
+---
+title: "March Madness Bracket Predictor"
+date: 2025-03-01
+categories: [R, XGBoost, tidyverse]
+---
+
+## Overview
+
+Built an ensemble prediction model combining XGBoost and stacked logistic regression to predict NCAA tournament game outcomes, achieving 78% accuracy across 10 years of historical matchups. Engineered 40+ differential features from KenPom, EvanMiya, and Barttorvik metrics (adjusted efficiency, ELO, SOS, shooting splits, Four Factors) and applied correlation filtering to reduce multicollinearity.
+
+## Tech Stack
+R, XGBoost, tidyverse, caret, KenPom, EvanMiya

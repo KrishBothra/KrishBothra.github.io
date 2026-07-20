@@ -6,26 +6,25 @@ about:
   template: trestles
   links: 
     - icon: linkedin
-      href: www.linkedin.com/in/krishbothra
+      href: https://www.linkedin.com/in/krishbothra
     - icon: github
       href: https://github.com/krishbothra
     - icon: envelope
       href: mailto:krishbothra3@gmail.com
 ---
 
-:::{#intro-heading}
-Hi, thanks so much for visiting my website!
-
 ## Education
-
-University of Wisconsin-Madison | Madison, WI | BS in Computer Science & Data Science | 2025-2028 *(expected)*
-
-## Experience
-
-This summer I am participating in the [Carnegie Mellon Sports Analytics Camp (CMSACamp)](https://www.cmu.edu/dietrich/statistics-datascience/engagement/summer/cmsa-camp.html).
-
-:::
+**University of Wisconsin–Madison** | Madison, WI | BS in Computer Science & Data Science | 2025–2028 *(expected)*  
+GPA: 3.84 | Coursework: OOP, Data Structures, Algorithm Analysis, Computer Organization & Low-Level Systems, Statistical Data Modeling, Linear Algebra & Matrix Methods
 
 ## About me 
 
-<!-- ![](images/logo.png) -->
+Hi, thanks so much for visiting my website! I'm a Computer Science & Data Science student at UW–Madison, passionate about AI systems, sports analytics, and building things that turn data into decisions.
+
+I love working at the intersection of data, sports, and software — whether that's predicting March Madness upsets, modeling NFL play outcomes, or building perception systems for autonomous vehicles. Outside of coursework, I enjoy digging into sports analytics projects and exploring new ways AI can automate real-world workflows.
+
+This summer I am participating in the [Carnegie Mellon Sports Analytics Camp (CMSACamp)](https://www.cmu.edu/dietrich/statistics-datascience/engagement/summer/cmsa-camp.html).
+
+
+
+

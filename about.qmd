@@ -1,9 +1,24 @@
 ---
-title: "About"
+title: "Experience"
 ---
 
-About this site
+**AI & Data Engineering Intern** — Pheydrus *(Mar. 2026 – Present)*  
+Building AI-powered automation agents with Claude, ManyChat, and Zapier for marketing and sales workflows, and a cross-platform insights dashboard aggregating funnel metrics across Meta Ads, SamCart, WebinarJam, and Flodesk.
 
-```{r}
-1 + 1
-```
+**Perceptions Team Member** — Wisconsin Autonomous, UW–Madison *(Aug. 2025 – Present)*  
+Engineering a real-time Bird's-Eye View visualization system for autonomous driving on NVIDIA Jetson hardware, with a multithreaded Python backend and WebRTC/WebTransport streaming.
+
+**Computer Science Researcher / Intern** — UC Santa Cruz *(June 2024 – Aug. 2024)*  
+Researched Visible Light Communication (VLC) as a Wi-Fi complement, designing custom packet structures with OOK modulation and analyzing BER/bitrate trade-offs.
+
+**Web Development Intern** — Boston Innovations *(Mar. 2024 – May 2024)*  
+Built and deployed a production company homepage with React, Next.js, and Cloudflare.
+
+**Lead Teacher (7/8) & Webmaster** — Comp Sci Kids *(Sep. 2022 – May 2025)*  
+Taught CS fundamentals to grades 1–8 and maintained the organization's website using React, REST APIs, SQL, and MongoDB.
+
+
+## Technical Skills
+**Languages:** Python, Java, C++, SQL, JavaScript, HTML/CSS, Swift, MATLAB, R  
+**Frameworks/Tools:** React, Next.js, Node.js, Firebase, ROS, PyTorch, OpenCV, Jupyter  
+**Systems:** Linux, Git, WebRTC, WebTransport, Multithreading, REST APIs, Cloudflare CDN

@@ -1,0 +1,29 @@
+---
+title: "Ego-Motion Estimation & BEV Mapping"
+date: 2025-12-01
+image: /Images/trajectory/trajectory.png
+categories: [Python, OpenCV, NumPy]
+---
+
+## Overview
+
+Estimated 3D ego-vehicle trajectory by tracking a traffic light as a world reference across stereo video. Processed RGB-D point clouds to generate ground-frame Bird's-Eye View (BEV) mappings with depth filtering for noise reduction.
+
+## Trajectory Estimation
+
+<video controls width="100%">
+  <source src="/Images/trajectory/trajectory.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+![Estimated ego-vehicle trajectory](/Images/trajectory/trajectory.png)
+
+## Wisconsin Autonomous Challenge
+
+<video controls width="100%">
+  <source src="/Images/trajectory/wa-challenge.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+## Tech Stack
+Python, NumPy, OpenCV

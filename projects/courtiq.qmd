@@ -1,0 +1,20 @@
+---
+title: "Court IQ"
+date: 2025-05-01
+image: /Images/CourtIQ/CourtIQ_Logo.png
+categories: [Swift, Firebase, iOS]
+---
+
+## Overview
+
+Court IQ is a Swift-based iOS app that helps coaches design drills, track player statistics, and analyze performance trends. It integrates Firebase and external APIs for real-time data storage and analytics.
+
+## Demo
+
+<video controls width="100%">
+  <source src="/Images/CourtIQ/courtiq-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+## Tech Stack
+Swift, Firebase, REST APIs, Xcode
