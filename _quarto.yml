@@ -16,7 +16,7 @@ format:
     theme:
       light: [cosmo, custom.scss]
       dark: solar
-    toc: true
+    toc: false
     page-layout: full
 
 
