@@ -2,36 +2,155 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Experience",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "AI & Data Engineering Intern — Pheydrus (Mar. 2026 – Present)\nBuilding AI-powered automation agents with Claude, ManyChat, and Zapier for marketing and sales workflows, and a cross-platform insights dashboard aggregating funnel metrics across Meta Ads, SamCart, WebinarJam, and Flodesk.\nPerceptions Team Member — Wisconsin Autonomous, UW–Madison (Aug. 2025 – Present)\nEngineering a real-time Bird’s-Eye View visualization system for autonomous driving on NVIDIA Jetson hardware, with a multithreaded Python backend and WebRTC/WebTransport streaming.\nComputer Science Researcher / Intern — UC Santa Cruz (June 2024 – Aug. 2024)\nResearched Visible Light Communication (VLC) as a Wi-Fi complement, designing custom packet structures with OOK modulation and analyzing BER/bitrate trade-offs.\nWeb Development Intern — Boston Innovations (Mar. 2024 – May 2024)\nBuilt and deployed a production company homepage with React, Next.js, and Cloudflare.\nLead Teacher (7/8) & Webmaster — Comp Sci Kids (Sep. 2022 – May 2025)\nTaught CS fundamentals to grades 1–8 and maintained the organization’s website using React, REST APIs, SQL, and MongoDB."
+  },
+  {
+    "objectID": "about.html#technical-skills",
+    "href": "about.html#technical-skills",
+    "title": "Experience",
+    "section": "Technical Skills",
+    "text": "Technical Skills\nLanguages: Python, Java, C++, SQL, JavaScript, HTML/CSS, Swift, MATLAB, R\nFrameworks/Tools: React, Next.js, Node.js, Firebase, ROS, PyTorch, OpenCV, Jupyter\nSystems: Linux, Git, WebRTC, WebTransport, Multithreading, REST APIs, Cloudflare CDN"
+  },
+  {
+    "objectID": "Projects.html",
+    "href": "Projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Court IQ\n\n\n\n\n\n\n\n\nMay 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nEgo-Motion Estimation & BEV Mapping\n\n\n\n\n\n\n\n\nDec 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMarch Madness Bracket Predictor\n\n\n\n\n\n\n\n\nMar 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNFL Analytics Suite\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/courtiq.html",
+    "href": "projects/courtiq.html",
+    "title": "Court IQ",
+    "section": "",
+    "text": "Court IQ is a Swift-based iOS app that helps coaches design drills, track player statistics, and analyze performance trends. It integrates Firebase and external APIs for real-time data storage and analytics."
+  },
+  {
+    "objectID": "projects/courtiq.html#overview",
+    "href": "projects/courtiq.html#overview",
+    "title": "Court IQ",
+    "section": "",
+    "text": "Court IQ is a Swift-based iOS app that helps coaches design drills, track player statistics, and analyze performance trends. It integrates Firebase and external APIs for real-time data storage and analytics."
+  },
+  {
+    "objectID": "projects/courtiq.html#demo",
+    "href": "projects/courtiq.html#demo",
+    "title": "Court IQ",
+    "section": "Demo",
+    "text": "Demo\n\n\nYour browser does not support the video tag."
+  },
+  {
+    "objectID": "projects/courtiq.html#tech-stack",
+    "href": "projects/courtiq.html#tech-stack",
+    "title": "Court IQ",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nSwift, Firebase, REST APIs, Xcode"
+  },
+  {
+    "objectID": "projects/march-madness.html",
+    "href": "projects/march-madness.html",
+    "title": "March Madness Bracket Predictor",
+    "section": "",
+    "text": "Built an ensemble prediction model combining XGBoost and stacked logistic regression to predict NCAA tournament game outcomes, achieving 78% accuracy across 10 years of historical matchups. Engineered 40+ differential features from KenPom, EvanMiya, and Barttorvik metrics (adjusted efficiency, ELO, SOS, shooting splits, Four Factors) and applied correlation filtering to reduce multicollinearity."
+  },
+  {
+    "objectID": "projects/march-madness.html#overview",
+    "href": "projects/march-madness.html#overview",
+    "title": "March Madness Bracket Predictor",
+    "section": "",
+    "text": "Built an ensemble prediction model combining XGBoost and stacked logistic regression to predict NCAA tournament game outcomes, achieving 78% accuracy across 10 years of historical matchups. Engineered 40+ differential features from KenPom, EvanMiya, and Barttorvik metrics (adjusted efficiency, ELO, SOS, shooting splits, Four Factors) and applied correlation filtering to reduce multicollinearity."
+  },
+  {
+    "objectID": "projects/march-madness.html#tech-stack",
+    "href": "projects/march-madness.html#tech-stack",
+    "title": "March Madness Bracket Predictor",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nR, XGBoost, tidyverse, caret, KenPom, EvanMiya"
+  },
+  {
+    "objectID": "projects/ego-motion.html",
+    "href": "projects/ego-motion.html",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "",
+    "text": "Estimated 3D ego-vehicle trajectory by tracking a traffic light as a world reference across stereo video. Processed RGB-D point clouds to generate ground-frame Bird’s-Eye View (BEV) mappings with depth filtering for noise reduction."
+  },
+  {
+    "objectID": "projects/ego-motion.html#overview",
+    "href": "projects/ego-motion.html#overview",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "",
+    "text": "Estimated 3D ego-vehicle trajectory by tracking a traffic light as a world reference across stereo video. Processed RGB-D point clouds to generate ground-frame Bird’s-Eye View (BEV) mappings with depth filtering for noise reduction."
+  },
+  {
+    "objectID": "projects/ego-motion.html#trajectory-estimation",
+    "href": "projects/ego-motion.html#trajectory-estimation",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "Trajectory Estimation",
+    "text": "Trajectory Estimation\n\n\nYour browser does not support the video tag. \n\n\n\nEstimated ego-vehicle trajectory"
+  },
+  {
+    "objectID": "projects/ego-motion.html#wisconsin-autonomous-challenge",
+    "href": "projects/ego-motion.html#wisconsin-autonomous-challenge",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "Wisconsin Autonomous Challenge",
+    "text": "Wisconsin Autonomous Challenge\n\n\nYour browser does not support the video tag."
+  },
+  {
+    "objectID": "projects/ego-motion.html#tech-stack",
+    "href": "projects/ego-motion.html#tech-stack",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nPython, NumPy, OpenCV"
+  },
+  {
+    "objectID": "projects/nfl-analytics.html",
+    "href": "projects/nfl-analytics.html",
+    "title": "NFL Analytics Suite",
+    "section": "",
+    "text": "Built logistic and linear regression models in R to predict 4th-down go decisions and quantify Air/Rush Yards Over Expected (AYOE/RYOE) across 4 NFL seasons, controlling for game situation and opponent quality. Trained an XGBoost model ranking 80+ NFL backs by rush yards over expectation and produced publication-quality visuals covering EPA/play, pass rate, and field goal metrics league-wide."
+  },
+  {
+    "objectID": "projects/nfl-analytics.html#overview",
+    "href": "projects/nfl-analytics.html#overview",
+    "title": "NFL Analytics Suite",
+    "section": "",
+    "text": "Built logistic and linear regression models in R to predict 4th-down go decisions and quantify Air/Rush Yards Over Expected (AYOE/RYOE) across 4 NFL seasons, controlling for game situation and opponent quality. Trained an XGBoost model ranking 80+ NFL backs by rush yards over expectation and produced publication-quality visuals covering EPA/play, pass rate, and field goal metrics league-wide."
+  },
+  {
+    "objectID": "projects/nfl-analytics.html#visuals",
+    "href": "projects/nfl-analytics.html#visuals",
+    "title": "NFL Analytics Suite",
+    "section": "Visuals",
+    "text": "Visuals\n\n\n\n4th Down Go/No-Go Model (2021–25)\n\n\n\n\n\nAir Yards Over Expected Model (2021–25)\n\n\n\n\n\nEPA/Play by Team\n\n\n\n\n\nRun/Pass Rate by Player — Bears 2025\n\n\n\n\n\nEPA per Play vs. Pass Rate (2022–25)\n\n\n\n\n\nField Goal Rate: Field vs. Result vs. Grade (FG_OE)\n\n\n\n\n\nPass Rush EPA (2025)\n\n\n\n\n\nQuarterback Grade\n\n\n\n\n\nRush Yards Over Expected — XGBoost Rankings"
+  },
+  {
+    "objectID": "projects/nfl-analytics.html#tech-stack",
+    "href": "projects/nfl-analytics.html#tech-stack",
+    "title": "NFL Analytics Suite",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nR, ggplot2, nflreadr, xgboost, tidymodels, dplyr"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Krish Bothra",
     "section": "",
-    "text": "Hi, thanks so much for visiting my website!\n\n\nUniversity of Wisconsin-Madison | Madison, WI | BS in Computer Science & Data Science | 2025-2028 (expected)\n\n\n\nThis summer I am participating in the Carnegie Mellon Sports Analytics Camp (CMSACamp)."
+    "text": "University of Wisconsin–Madison | Madison, WI | BS in Computer Science & Data Science | 2025–2028 (expected)\nGPA: 3.84 | Coursework: OOP, Data Structures, Algorithm Analysis, Computer Organization & Low-Level Systems, Statistical Data Modeling, Linear Algebra & Matrix Methods"
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
     "title": "Krish Bothra",
     "section": "",
-    "text": "University of Wisconsin-Madison | Madison, WI | BS in Computer Science & Data Science | 2025-2028 (expected)"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Krish Bothra",
-    "section": "",
-    "text": "This summer I am participating in the Carnegie Mellon Sports Analytics Camp (CMSACamp)."
+    "text": "University of Wisconsin–Madison | Madison, WI | BS in Computer Science & Data Science | 2025–2028 (expected)\nGPA: 3.84 | Coursework: OOP, Data Structures, Algorithm Analysis, Computer Organization & Low-Level Systems, Statistical Data Modeling, Linear Algebra & Matrix Methods"
   },
   {
     "objectID": "index.html#about-me",
     "href": "index.html#about-me",
     "title": "Krish Bothra",
     "section": "About me",
-    "text": "About me"
+    "text": "About me\nHi, thanks so much for visiting my website! I’m a Computer Science & Data Science student at UW–Madison, passionate about AI systems, sports analytics, and building things that turn data into decisions.\nI love working at the intersection of data, sports, and software — whether that’s predicting March Madness upsets, modeling NFL play outcomes, or building perception systems for autonomous vehicles. Outside of coursework, I enjoy digging into sports analytics projects and exploring new ways AI can automate real-world workflows.\nThis summer I am participating in the Carnegie Mellon Sports Analytics Camp (CMSACamp)."
   }
 ]
