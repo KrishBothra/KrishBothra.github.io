@@ -1,0 +1,31 @@
+---
+title: "Krish Bothra"
+image: Images/PFP.png
+toc: false
+about: 
+  template: trestles
+  links: 
+    - icon: linkedin
+      href: www.linkedin.com/in/krishbothra
+    - icon: github
+      href: https://github.com/krishbothra
+    - icon: envelope
+      href: mailto:krishbothra3@gmail.com
+---
+
+:::{#intro-heading}
+Hi, thanks so much for visiting my website!
+
+## Education
+
+University of Wisconsin-Madison | Madison, WI | BS in Computer Science & Data Science | 2025-2028 *(expected)*
+
+## Experience
+
+This summer I am participating in the [Carnegie Mellon Sports Analytics Camp (CMSACamp)](https://www.cmu.edu/dietrich/statistics-datascience/engagement/summer/cmsa-camp.html).
+
+:::
+
+## About me 
+
+<!-- ![](images/logo.png) -->

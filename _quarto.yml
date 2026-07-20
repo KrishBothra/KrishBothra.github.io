@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Krish Bothra"
+  favicon: Images/favicon-32x32.png
+  navbar:
+    logo: Images/favicon-32x32.png
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme:
+      light: [cosmo, custom.scss]
+      dark: solar
+    toc: true
+    page-layout: full
+
+
+
