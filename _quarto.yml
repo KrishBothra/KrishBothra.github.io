@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "final_presenatation.qmd"
 
 website:
   title: "Krish Bothra"
@@ -11,6 +14,7 @@ website:
         text: Home
       - about.qmd
       - Projects.qmd
+
 
 format:
   html:

@@ -1,0 +1,179 @@
+---
+title: "Screen Machine:<br>Pre-Snap Play Prediction in the NFL"
+subtitle: "External Advisor: Dr. Karim Kassam, Teamworks"
+author: "Krish Bothra, Ethan Larimore, Jenna Lau"
+format: 
+  revealjs:
+    slide-number: true
+    center: false
+    output-file: "CMSAC_Pres.html"
+editor: visual
+---
+
+## Introduction
+
+::: {layout="[[1], [ -1 ]]"}
+Since 2010, the proportion of passing plays being screens in the NFL has increased from 7.5% to over 10%
+:::
+
+::: {.column width="50%"}
+![](images/presentation/clipboard-1229396113.png){fig-align="left" width="450" height="330"}
+:::
+
+::: {.column width="50%"}
+### Goals:
+
+Predict likelihood a screen pass occurs using pre-snap features
+
+-   Identify lateral location
+-   Identify target receiver group
+:::
+
+## Motivating Example: LA vs. CAR
+
+![](images/Recording%202026-07-17%20120952-01.gif){fig-align="center"}
+
+## Data Overview
+
+::: {layout="[[1]]"}
+**Sources:** NFL Big Data Bowl 2025, nflfastR & nflreadr packages
+
+**Model Observations:** 2022 Passing Plays from Weeks 1-9
+:::
+
+::: {.column width="50%"}
+### Data Subsets:
+
+-   Game
+-   Play by Play
+-   Player play
+-   Tracking
+:::
+
+::: {.column width="50%"}
+![](images/presentation_play%20(2)%20(1).gif){fig-align="left"}
+:::
+
+## Plan of Action
+
+::: {layout="[[1], [ -1 ]]"}
+-   [x] Data Exploration
+-   [x] Feature Engineering
+-   [x] Model Evaluation & Selection
+-   [x] Interpret Results
+-   [ ] Combine Models
+-   [ ] Interactive Team-Facing Product
+:::
+
+## Team Tendencies over Time
+
+![](images/clipboard-982075998.png)
+
+## Symmetrical Target Distribution
+
+![](images/There%20is%20no%20correlation%20between%20receiver%20target%20share%20and%20lateral%20direction-01.jpeg)
+
+One sample t-test results: WR (*p* = 0.608), RB/TE (*p* = 0.641)
+
+## Methods
+
+![](images/Rplot01.png){fig-align="center" height="450"}
+
+## Model 1: Screen Probability
+
+**Feature Set Overview:**
+
+-   Team Tendencies (%): Screens, man/zone coverage
+-   Situation: Down & distance
+-   Spatial Factors: Receiver distance
+
+![](images/model_results_table-01.png)
+
+## Model 2 & 3: Conditional Probabilities
+
+::::: {.columns style="display: flex; align-items: center;"}
+::: {.column width="60%"}
+**Lateral Direction:**
+
+![](images/Lateral%20Direction%20Model.jpeg)
+
+**Receiver Group:**
+
+![](images/Screenshot%202026-07-19%20235134.png)
+:::
+
+::: {.column width="40%"}
+![](images/ezgif.com-crop%20(1).gif){fig-align="center"}
+:::
+:::::
+
+## Results: Case Study
+
+::: {.column width="35%"}
+![](case_study_dashboard.png)
+:::
+
+::: {.column width="65%"}
+![](images/Recording%202026-07-17%20120952.gif){fig-align="default"}
+:::
+
+## Model Beats Team's own Tendency
+
+![](images/LOTO%20-%20log2%20-%20gt.jpeg){fig-align="center"}
+
+## Discussion
+
+XGBoost modeling framework to predict screen pass tendencies for coach-usable insights
+
+::: {style="margin-top: 1.5em;"}
+:::
+
+**Limitations:** Relying on NFL Weeks 1- 9 to train models
+
+::: {style="margin-top: 1.5em;"}
+:::
+
+**Future Work:**
+
+-   Use multiple years of data
+
+-   Sequential models for continuous pre-snap probability
+
+## Plan of Action
+
+::: {layout="[[1], [ -1 ]]"}
+-   [ ] Data Exploration
+-   [ ] Feature Engineering
+-   [ ] Model Evaluation & Selection
+-   [ ] Interpret Results
+-   [ ] Combine Models
+-   [ ] Interactive Team-Facing Product
+:::
+
+## Appendix
+
+::: {.column width="50%"}
+LOTO Model VIP:
+
+![](images/variable_importance_LOTO.jpg){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+Lateral Distance Model VIP:
+
+![](images/variable_importance.jpg){fig-align="center"}
+:::
+
+## Appendix Continued
+
+::: {.column width="50%"}
+Receiver Group Model VIP:
+
+![](images/clipboard-1960323270.png)
+:::
+
+::: {.column width="50%"}
+Screen Model VIP:
+
+![](images/clipboard-1766105128.png)
+:::
