@@ -1,5 +1,89 @@
 [
   {
+    "objectID": "projects/nfl-analytics.html",
+    "href": "projects/nfl-analytics.html",
+    "title": "NFL Analytics Suite",
+    "section": "",
+    "text": "Built logistic and linear regression models in R to predict 4th-down go decisions and quantify Air/Rush Yards Over Expected (AYOE/RYOE) across 4 NFL seasons, controlling for game situation and opponent quality. Trained an XGBoost model ranking 80+ NFL backs by rush yards over expectation and produced publication-quality visuals covering EPA/play, pass rate, and field goal metrics league-wide."
+  },
+  {
+    "objectID": "projects/nfl-analytics.html#overview",
+    "href": "projects/nfl-analytics.html#overview",
+    "title": "NFL Analytics Suite",
+    "section": "",
+    "text": "Built logistic and linear regression models in R to predict 4th-down go decisions and quantify Air/Rush Yards Over Expected (AYOE/RYOE) across 4 NFL seasons, controlling for game situation and opponent quality. Trained an XGBoost model ranking 80+ NFL backs by rush yards over expectation and produced publication-quality visuals covering EPA/play, pass rate, and field goal metrics league-wide."
+  },
+  {
+    "objectID": "projects/nfl-analytics.html#visuals",
+    "href": "projects/nfl-analytics.html#visuals",
+    "title": "NFL Analytics Suite",
+    "section": "Visuals",
+    "text": "Visuals\n\n\n\n4th Down Go/No-Go Model (2021–25)\n\n\n\n\n\nAir Yards Over Expected Model (2021–25)\n\n\n\n\n\nEPA/Play by Team\n\n\n\n\n\nRun/Pass Rate by Player — Bears 2025\n\n\n\n\n\nEPA per Play vs. Pass Rate (2022–25)\n\n\n\n\n\nField Goal Rate: Field vs. Result vs. Grade (FG_OE)\n\n\n\n\n\nPass Rush EPA (2025)\n\n\n\n\n\nQuarterback Grade\n\n\n\n\n\nRush Yards Over Expected — XGBoost Rankings"
+  },
+  {
+    "objectID": "projects/nfl-analytics.html#tech-stack",
+    "href": "projects/nfl-analytics.html#tech-stack",
+    "title": "NFL Analytics Suite",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nR, ggplot2, nflreadr, xgboost, tidymodels, dplyr"
+  },
+  {
+    "objectID": "projects/ego-motion.html",
+    "href": "projects/ego-motion.html",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "",
+    "text": "Estimated 3D ego-vehicle trajectory by tracking a traffic light as a world reference across stereo video. Processed RGB-D point clouds to generate ground-frame Bird’s-Eye View (BEV) mappings with depth filtering for noise reduction."
+  },
+  {
+    "objectID": "projects/ego-motion.html#overview",
+    "href": "projects/ego-motion.html#overview",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "",
+    "text": "Estimated 3D ego-vehicle trajectory by tracking a traffic light as a world reference across stereo video. Processed RGB-D point clouds to generate ground-frame Bird’s-Eye View (BEV) mappings with depth filtering for noise reduction."
+  },
+  {
+    "objectID": "projects/ego-motion.html#trajectory-estimation",
+    "href": "projects/ego-motion.html#trajectory-estimation",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "Trajectory Estimation",
+    "text": "Trajectory Estimation\n\n\nYour browser does not support the video tag. \n\n\n\nEstimated ego-vehicle trajectory"
+  },
+  {
+    "objectID": "projects/ego-motion.html#wisconsin-autonomous-challenge",
+    "href": "projects/ego-motion.html#wisconsin-autonomous-challenge",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "Wisconsin Autonomous Challenge",
+    "text": "Wisconsin Autonomous Challenge\n\n\nYour browser does not support the video tag."
+  },
+  {
+    "objectID": "projects/ego-motion.html#tech-stack",
+    "href": "projects/ego-motion.html#tech-stack",
+    "title": "Ego-Motion Estimation & BEV Mapping",
+    "section": "Tech Stack",
+    "text": "Tech Stack\nPython, NumPy, OpenCV"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Krish Bothra",
+    "section": "",
+    "text": "University of Wisconsin–Madison | Madison, WI | BS in Computer Science & Data Science | 2025–2028 (expected)\nGPA: 3.84 | Coursework: OOP, Data Structures, Algorithm Analysis, Computer Organization & Low-Level Systems, Statistical Data Modeling, Linear Algebra & Matrix Methods"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Krish Bothra",
+    "section": "",
+    "text": "University of Wisconsin–Madison | Madison, WI | BS in Computer Science & Data Science | 2025–2028 (expected)\nGPA: 3.84 | Coursework: OOP, Data Structures, Algorithm Analysis, Computer Organization & Low-Level Systems, Statistical Data Modeling, Linear Algebra & Matrix Methods"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Krish Bothra",
+    "section": "About me",
+    "text": "About me\nHi, thanks so much for visiting my website! I’m a Computer Science & Data Science student at UW–Madison, passionate about AI systems, sports analytics, and building things that turn data into decisions.\nI love working at the intersection of data, sports, and software — whether that’s predicting March Madness upsets, modeling NFL play outcomes, or building perception systems for autonomous vehicles. Outside of coursework, I enjoy digging into sports analytics projects and exploring new ways AI can automate real-world workflows.\nThis summer I am participating in the Carnegie Mellon Sports Analytics Camp (CMSACamp)."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Experience",
@@ -19,6 +103,111 @@
     "title": "Projects",
     "section": "",
     "text": "Court IQ\n\n\n\n\n\n\n\n\nMay 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nEgo-Motion Estimation & BEV Mapping\n\n\n\n\n\n\n\n\nDec 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMarch Madness Bracket Predictor\n\n\n\n\n\n\n\n\nMar 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNFL Analytics Suite\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#introduction",
+    "href": "CMSAC_Pres.html#introduction",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Introduction",
+    "text": "Introduction\n\n\n\nSince 2010, the proportion of passing plays being screens in the NFL has increased from 7.5% to over 10%\n\n\n\n\n\n\n\n\n\n\nGoals:\nPredict likelihood a screen pass occurs using pre-snap features\n\nIdentify lateral location\nIdentify target receiver group"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#motivating-example-la-vs.-car",
+    "href": "CMSAC_Pres.html#motivating-example-la-vs.-car",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Motivating Example: LA vs. CAR",
+    "text": "Motivating Example: LA vs. CAR"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#data-overview",
+    "href": "CMSAC_Pres.html#data-overview",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Data Overview",
+    "text": "Data Overview\n\n\n\nSources: NFL Big Data Bowl 2025, nflfastR & nflreadr packages\n\n\n\n\nModel Observations: 2022 Passing Plays from Weeks 1-9\n\n\n\n\nData Subsets:\n\nGame\nPlay by Play\nPlayer play\nTracking"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#plan-of-action",
+    "href": "CMSAC_Pres.html#plan-of-action",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Plan of Action",
+    "text": "Plan of Action\n\n\n\n\nData Exploration\nFeature Engineering\nModel Evaluation & Selection\nInterpret Results\nCombine Models\nInteractive Team-Facing Product"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#team-tendencies-over-time",
+    "href": "CMSAC_Pres.html#team-tendencies-over-time",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Team Tendencies over Time",
+    "text": "Team Tendencies over Time"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#symmetrical-target-distribution",
+    "href": "CMSAC_Pres.html#symmetrical-target-distribution",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Symmetrical Target Distribution",
+    "text": "Symmetrical Target Distribution\n\nOne sample t-test results: WR (p = 0.608), RB/TE (p = 0.641)"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#methods",
+    "href": "CMSAC_Pres.html#methods",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Methods",
+    "text": "Methods"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#model-1-screen-probability",
+    "href": "CMSAC_Pres.html#model-1-screen-probability",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Model 1: Screen Probability",
+    "text": "Model 1: Screen Probability\nFeature Set Overview:\n\nTeam Tendencies (%): Screens, man/zone coverage\nSituation: Down & distance\nSpatial Factors: Receiver distance"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#model-2-3-conditional-probabilities",
+    "href": "CMSAC_Pres.html#model-2-3-conditional-probabilities",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Model 2 & 3: Conditional Probabilities",
+    "text": "Model 2 & 3: Conditional Probabilities\n\n\nLateral Direction:\n\nReceiver Group:"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#results-case-study",
+    "href": "CMSAC_Pres.html#results-case-study",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Results: Case Study",
+    "text": "Results: Case Study"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#model-beats-teams-own-tendency",
+    "href": "CMSAC_Pres.html#model-beats-teams-own-tendency",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Model Beats Team’s own Tendency",
+    "text": "Model Beats Team’s own Tendency"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#discussion",
+    "href": "CMSAC_Pres.html#discussion",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Discussion",
+    "text": "Discussion\nXGBoost modeling framework to predict screen pass tendencies for coach-usable insights\n\n\n\nLimitations: Relying on NFL Weeks 1- 9 to train models\n\n\n\nFuture Work:\n\nUse multiple years of data\nSequential models for continuous pre-snap probability"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#plan-of-action-1",
+    "href": "CMSAC_Pres.html#plan-of-action-1",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Plan of Action",
+    "text": "Plan of Action\n\n\n\n\nData Exploration\nFeature Engineering\nModel Evaluation & Selection\nInterpret Results\nCombine Models\nInteractive Team-Facing Product"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#appendix",
+    "href": "CMSAC_Pres.html#appendix",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Appendix",
+    "text": "Appendix\n\nLOTO Model VIP:\n\n\n\n\n\n\nLateral Distance Model VIP:"
+  },
+  {
+    "objectID": "CMSAC_Pres.html#appendix-continued",
+    "href": "CMSAC_Pres.html#appendix-continued",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Appendix Continued",
+    "text": "Appendix Continued\n\nReceiver Group Model VIP:\n\n\nScreen Model VIP:"
   },
   {
     "objectID": "projects/courtiq.html",
@@ -68,89 +257,5 @@
     "title": "March Madness Bracket Predictor",
     "section": "Tech Stack",
     "text": "Tech Stack\nR, XGBoost, tidyverse, caret, KenPom, EvanMiya"
-  },
-  {
-    "objectID": "projects/ego-motion.html",
-    "href": "projects/ego-motion.html",
-    "title": "Ego-Motion Estimation & BEV Mapping",
-    "section": "",
-    "text": "Estimated 3D ego-vehicle trajectory by tracking a traffic light as a world reference across stereo video. Processed RGB-D point clouds to generate ground-frame Bird’s-Eye View (BEV) mappings with depth filtering for noise reduction."
-  },
-  {
-    "objectID": "projects/ego-motion.html#overview",
-    "href": "projects/ego-motion.html#overview",
-    "title": "Ego-Motion Estimation & BEV Mapping",
-    "section": "",
-    "text": "Estimated 3D ego-vehicle trajectory by tracking a traffic light as a world reference across stereo video. Processed RGB-D point clouds to generate ground-frame Bird’s-Eye View (BEV) mappings with depth filtering for noise reduction."
-  },
-  {
-    "objectID": "projects/ego-motion.html#trajectory-estimation",
-    "href": "projects/ego-motion.html#trajectory-estimation",
-    "title": "Ego-Motion Estimation & BEV Mapping",
-    "section": "Trajectory Estimation",
-    "text": "Trajectory Estimation\n\n\nYour browser does not support the video tag. \n\n\n\nEstimated ego-vehicle trajectory"
-  },
-  {
-    "objectID": "projects/ego-motion.html#wisconsin-autonomous-challenge",
-    "href": "projects/ego-motion.html#wisconsin-autonomous-challenge",
-    "title": "Ego-Motion Estimation & BEV Mapping",
-    "section": "Wisconsin Autonomous Challenge",
-    "text": "Wisconsin Autonomous Challenge\n\n\nYour browser does not support the video tag."
-  },
-  {
-    "objectID": "projects/ego-motion.html#tech-stack",
-    "href": "projects/ego-motion.html#tech-stack",
-    "title": "Ego-Motion Estimation & BEV Mapping",
-    "section": "Tech Stack",
-    "text": "Tech Stack\nPython, NumPy, OpenCV"
-  },
-  {
-    "objectID": "projects/nfl-analytics.html",
-    "href": "projects/nfl-analytics.html",
-    "title": "NFL Analytics Suite",
-    "section": "",
-    "text": "Built logistic and linear regression models in R to predict 4th-down go decisions and quantify Air/Rush Yards Over Expected (AYOE/RYOE) across 4 NFL seasons, controlling for game situation and opponent quality. Trained an XGBoost model ranking 80+ NFL backs by rush yards over expectation and produced publication-quality visuals covering EPA/play, pass rate, and field goal metrics league-wide."
-  },
-  {
-    "objectID": "projects/nfl-analytics.html#overview",
-    "href": "projects/nfl-analytics.html#overview",
-    "title": "NFL Analytics Suite",
-    "section": "",
-    "text": "Built logistic and linear regression models in R to predict 4th-down go decisions and quantify Air/Rush Yards Over Expected (AYOE/RYOE) across 4 NFL seasons, controlling for game situation and opponent quality. Trained an XGBoost model ranking 80+ NFL backs by rush yards over expectation and produced publication-quality visuals covering EPA/play, pass rate, and field goal metrics league-wide."
-  },
-  {
-    "objectID": "projects/nfl-analytics.html#visuals",
-    "href": "projects/nfl-analytics.html#visuals",
-    "title": "NFL Analytics Suite",
-    "section": "Visuals",
-    "text": "Visuals\n\n\n\n4th Down Go/No-Go Model (2021–25)\n\n\n\n\n\nAir Yards Over Expected Model (2021–25)\n\n\n\n\n\nEPA/Play by Team\n\n\n\n\n\nRun/Pass Rate by Player — Bears 2025\n\n\n\n\n\nEPA per Play vs. Pass Rate (2022–25)\n\n\n\n\n\nField Goal Rate: Field vs. Result vs. Grade (FG_OE)\n\n\n\n\n\nPass Rush EPA (2025)\n\n\n\n\n\nQuarterback Grade\n\n\n\n\n\nRush Yards Over Expected — XGBoost Rankings"
-  },
-  {
-    "objectID": "projects/nfl-analytics.html#tech-stack",
-    "href": "projects/nfl-analytics.html#tech-stack",
-    "title": "NFL Analytics Suite",
-    "section": "Tech Stack",
-    "text": "Tech Stack\nR, ggplot2, nflreadr, xgboost, tidymodels, dplyr"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Krish Bothra",
-    "section": "",
-    "text": "University of Wisconsin–Madison | Madison, WI | BS in Computer Science & Data Science | 2025–2028 (expected)\nGPA: 3.84 | Coursework: OOP, Data Structures, Algorithm Analysis, Computer Organization & Low-Level Systems, Statistical Data Modeling, Linear Algebra & Matrix Methods"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Krish Bothra",
-    "section": "",
-    "text": "University of Wisconsin–Madison | Madison, WI | BS in Computer Science & Data Science | 2025–2028 (expected)\nGPA: 3.84 | Coursework: OOP, Data Structures, Algorithm Analysis, Computer Organization & Low-Level Systems, Statistical Data Modeling, Linear Algebra & Matrix Methods"
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Krish Bothra",
-    "section": "About me",
-    "text": "About me\nHi, thanks so much for visiting my website! I’m a Computer Science & Data Science student at UW–Madison, passionate about AI systems, sports analytics, and building things that turn data into decisions.\nI love working at the intersection of data, sports, and software — whether that’s predicting March Madness upsets, modeling NFL play outcomes, or building perception systems for autonomous vehicles. Outside of coursework, I enjoy digging into sports analytics projects and exploring new ways AI can automate real-world workflows.\nThis summer I am participating in the Carnegie Mellon Sports Analytics Camp (CMSACamp)."
   }
 ]
