@@ -1,7 +1,10 @@
 project:
   type: website
+  resources:
+    - "Images/**"
   render:
     - "*.qmd"
+
 website:
   title: "Krish Bothra"
   favicon: Images/favicon-32x32.png
@@ -13,7 +16,6 @@ website:
       - about.qmd
       - Projects.qmd
 
-
 format:
   html:
     theme:
@@ -21,6 +23,3 @@ format:
       dark: solar
     toc: false
     page-layout: full
-
-
-
