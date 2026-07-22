@@ -18,7 +18,7 @@ Since 2010, the proportion of passing plays being screens in the NFL has increas
 :::
 
 ::: {.column width="50%"}
-![](Images/presentation/clipboard-1229396113.png){fig-align="left" width="450" height="330"}
+![](Images/Presentation/clipboard-1229396113.png){fig-align="left" width="450" height="330"}
 :::
 
 ::: {.column width="50%"}
@@ -32,7 +32,7 @@ Predict likelihood a screen pass occurs using pre-snap features
 
 ## Motivating Example: LA vs. CAR
 
-![](Images/presentation/Recording2026-07-17120952-01.gif){fig-align="center"}
+![](Images/Presentation/Recording2026-07-17120952-01.gif){fig-align="center"}
 
 ## Data Overview
 
@@ -52,7 +52,7 @@ Predict likelihood a screen pass occurs using pre-snap features
 :::
 
 ::: {.column width="50%"}
-![](Images/presentation/presentation_play_main.gif){fig-align="left"}
+![](Images/Presentation/presentation_play_main.gif){fig-align="left"}
 :::
 
 ## Plan of Action
@@ -68,17 +68,17 @@ Predict likelihood a screen pass occurs using pre-snap features
 
 ## Team Tendencies over Time
 
-![](Images/presentation/clipboard-982075998.png)
+![](Images/Presentation/clipboard-982075998.png)
 
 ## Symmetrical Target Distribution
 
-![](Images/presentation/Correlation-targetshare.jpeg)
+![](Images/Presentation/Correlation-targetshare.jpeg)
 
 One sample t-test results: WR (*p* = 0.608), RB/TE (*p* = 0.641)
 
 ## Methods
 
-![](Images/presentation/Rplot01.png){fig-align="center" height="450"}
+![](Images/Presentation/Rplot01.png){fig-align="center" height="450"}
 
 ## Model 1: Screen Probability
 
@@ -88,7 +88,7 @@ One sample t-test results: WR (*p* = 0.608), RB/TE (*p* = 0.641)
 -   Situation: Down & distance
 -   Spatial Factors: Receiver distance
 
-![](Images/presentation/model_results_table-01.png)
+![](Images/Presentation/model_results_table-01.png)
 
 ## Model 2 & 3: Conditional Probabilities
 
@@ -96,31 +96,31 @@ One sample t-test results: WR (*p* = 0.608), RB/TE (*p* = 0.641)
 ::: {.column width="60%"}
 **Lateral Direction:**
 
-![](Images/presentation/LateralDirectionModel.jpeg)
+![](Images/Presentation/LateralDirectionModel.jpeg)
 
 **Receiver Group:**
 
-![](Images/presentation/Screenshot2026-07-19235134.png)
+![](Images/Presentation/Screenshot2026-07-19235134.png)
 :::
 
 ::: {.column width="40%"}
-![](Images/presentation/ezgif_com_crop.gif){fig-align="center"}
+![](Images/Presentation/ezgif_com_crop.gif){fig-align="center"}
 :::
 :::::
 
 ## Results: Case Study
 
 ::: {.column width="35%"}
-![](Images/presentation/case_study_dashboard.png)
+![](Images/Presentation/case_study_dashboard.png)
 :::
 
 ::: {.column width="65%"}
-![](Images/presentation/Recording_2026-07_17_120952.gif){fig-align="default"}
+![](Images/Presentation/Recording_2026-07_17_120952.gif){fig-align="default"}
 :::
 
 ## Model Beats Team's own Tendency
 
-![](Images/presentation/LOTO-log2-gt.jpeg){fig-align="center"}
+![](Images/Presentation/LOTO-log2-gt.jpeg){fig-align="center"}
 
 ## Discussion
 
@@ -156,13 +156,13 @@ XGBoost modeling framework to predict screen pass tendencies for coach-usable in
 ::: {.column width="50%"}
 LOTO Model VIP:
 
-![](Images/presentation/variable_importance_LOTO.jpg){fig-align="center"}
+![](Images/Presentation/variable_importance_LOTO.jpg){fig-align="center"}
 :::
 
 ::: {.column width="50%"}
 Lateral Distance Model VIP:
 
-![](Images/presentation/variable_importance.jpg){fig-align="center"}
+![](Images/Presentation/variable_importance.jpg){fig-align="center"}
 :::
 
 ## Appendix Continued
@@ -170,11 +170,11 @@ Lateral Distance Model VIP:
 ::: {.column width="50%"}
 Receiver Group Model VIP:
 
-![](Images/presentation/clipboard-1960323270.png)
+![](Images/Presentation/clipboard-1960323270.png)
 :::
 
 ::: {.column width="50%"}
 Screen Model VIP:
 
-![](Images/presentation/clipboard-1766105128.png)
+![](Images/Presentation/clipboard-1766105128.png)
 :::
