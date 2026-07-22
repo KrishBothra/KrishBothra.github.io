@@ -7,6 +7,7 @@ format:
     slide-number: true
     center: false
     output-file: "CMSAC_Pres.html"
+    embed-resources: true
 editor: visual
 ---
 

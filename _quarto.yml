@@ -2,8 +2,6 @@ project:
   type: website
   render:
     - "*.qmd"
-    - "final_presenatation.qmd"
-
 website:
   title: "Krish Bothra"
   favicon: Images/favicon-32x32.png
