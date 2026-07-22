@@ -88,7 +88,7 @@ One sample t-test results: WR (*p* = 0.608), RB/TE (*p* = 0.641)
 -   Situation: Down & distance
 -   Spatial Factors: Receiver distance
 
-![](Images/model_results_table-01.png)
+![](Images/Presentation/model_results_table-01.png)
 
 ## Model 2 & 3: Conditional Probabilities
 
