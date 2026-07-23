@@ -84,6 +84,83 @@
     "text": "About me\nHi, thanks so much for visiting my website! I’m a Computer Science & Data Science student at UW–Madison, passionate about AI systems, sports analytics, and building things that turn data into decisions.\nI love working at the intersection of data, sports, and software — whether that’s predicting March Madness upsets, modeling NFL play outcomes, or building perception systems for autonomous vehicles. Outside of coursework, I enjoy digging into sports analytics projects and exploring new ways AI can automate real-world workflows.\nThis summer I am participating in the Carnegie Mellon Sports Analytics Camp (CMSACamp)."
   },
   {
+    "objectID": "CMSAC_report.html#introduction",
+    "href": "CMSAC_report.html#introduction",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Introduction",
+    "text": "Introduction\nThink fast! The secret sauce behind the NFL’s screen play is the element of surprise. The play involves the quarterback quickly releasing the ball to a receiver close to the line of scrimmage, with nearby teammates swooping in to block incoming defenders and propel the ball forward. We can see its effectiveness in this play by the Los Angeles Rams in 2022, with Matthew Stafford swiftly delivering the ball to a well-protected Cooper Kupp.\n\nFigure 1. 2022 Week 6 LA vs. CAR screen pass from M. Stafford to C. Kupp \nWhile the screen play is designed to be a reliable and consistent play, its success depends heavily on surprise. If defenders recognize the play before or immediately after the snap, they can quickly target the intended receiver and limit yardage. Take a look at this play by the New York Giants in 2024:\n\nFigure 2. 2024 Week 1 MIN vs. NY screen pass from D. Jones intercepted for a Pick 6 \nTouchdown! …Vikings??\nLinebacker Andrew Ginkel acted on his screen play suspicions by not fully pressuring his offensive lineman, which set up a beautifully executed interception. Accurately predicting screen plays before the snap is an invaluable defensive skill to halt drives, and knowing the offense’s side of attack and likely receiver add an even clearer picture for the defense to capitalize on. \nThis paper aims to create a framework to consistently identify high-likelihood screen plays, while also revealing key details on an offense’s pre-planned structures. Using only pre-snap information, we can determine the cues defenses can use to anticipate an offense’s intentions and highlight the NFL teams whose screen play tendencies are the easiest to predict."
+  },
+  {
+    "objectID": "CMSAC_report.html#data",
+    "href": "CMSAC_report.html#data",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Data",
+    "text": "Data\nOur primary data source is from the 2025 NFL Big Data Bowl1, which provides tracking and event level data up to week 9 of the 2022 NFL season.\nHere is an overview of each type of data provided:\n\nGames: Each observation represents information on an NFL game, which includes the team involved, the outcome and final score, and the exact date\nPlayers: Each observation represents a rostered player and includes their main position over the season\nPlay by Play: Each observation describes a play’s context and outcome, including the quarter, down, yards to go, and formations.\nPlayer Play: Each observation describes a player’s role throughout a play, such as whether they were in motion before the snap, attempted or executed a sack, and the route they ran.\nTracking: Each observation represents a single player at one frame in time, including the player’s x- and y-coordinates, speed, orientation, and direction. This animation illustrates the frame-by-frame (10 hz) positioning of all 22 players from pre-snap huddle to the end of the play:\n\nFigure 3. Player-tracking screen play from 2022 Week 6 LA vs. CAR\n\nPlayers without clearly recorded pre-snap motion (NAs) on certain plays were assumed to have none. We also used the nflfastR and nflreadr packages, which contain more detailed play by play data dating back to 1999, to extract additional features (e.g., number of defenders in the box), and to explore historical team offensive and defensive tendencies (as seen in Figure 4)."
+  },
+  {
+    "objectID": "CMSAC_report.html#exploratory-data-analysis",
+    "href": "CMSAC_report.html#exploratory-data-analysis",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Exploratory Data Analysis",
+    "text": "Exploratory Data Analysis\nTo get a better understanding of variable interactions and how they relate to our motivations, we explored a variety of features within the data. Identifying these relationships helped us gain of sense of the state of the NFL at the time, team strategies, and teams use their players.\n Figure 4. Team screen play percentage across seasons\nKey Takeaways: Using supplementary data from nflfastR and nflreadr, we plotted screen usage trends between teams from 2020 to 2022. The gap between top and bottom teams show a consistent difference throughout the seasons differing by 5-10%. Additionally, the set of team from each season are different but we find patterns of similar teams within multiple years. For example, the Arizona Cardinals is the top team and the Baltimore Ravens is among the bottom from 2020 to 2021. Since teams have varying preferences for using screens, it is important to consider the possession team’s tendencies within our model. Taking this into account, any historical probabilities we feature engineering moving forward to predict screen plays occurring will comprise of the previous two years (2020-21) leading up to 2022.\nFigure 3. Receiver Group Target Share Based on Lateral Direction of a Screen Play\n\nKey Takeaways: This contingency table shows the target share between receiver groups on the lateral direction of screen plays. Since the p value is greater then 0.05 we can assume that there is no significant difference between the direction of the screen play and which receiver group will be targeted."
+  },
+  {
+    "objectID": "CMSAC_report.html#methodology",
+    "href": "CMSAC_report.html#methodology",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Methodology",
+    "text": "Methodology\nFor our methodology we decided on a two-stage hierarchical modeling framework:\n\n\n\n\n\n\nflowchart TD\n    A[\"Model 1: Screen Probability&lt;br&gt;Screen or not\"] --&gt; B[\"Model 2: Lateral Direction&lt;br&gt;Left or right\"]\n    A --&gt; C[\"Model 3: Target Group&lt;br&gt;RB/TE or WR\"]\n    \n    classDef indianred fill:#CD5B45,color:#ffffff,stroke:#8B3A2B;\n    class A,B,C indianred\n\n\n\n\n\n\n\nAcross all three models, we applied a common set of filters to remove plays where the offense’s original intent was compromised or the play didn’t count toward a clean result: we excluded QB kneels, QB spikes, and any play nullified by penalty. We also excluded plays beyond the 95th percentile of time-to-throw, to remove scrambles or improvised plays where the original goal of the play had been lost, and excluded all plays run by the Miami Dolphins, since their starting quarterback, Tua Tagovailoa, is left-handed, which could introduce bias into our spatial features.\nFor the screen probability model, we began with all passing plays, giving us a dataset of about 8,682 plays. After applying the filters above, 6,199 passing plays remained for training/testing the screen probability model.\nThe lateral direction model and the receiver group model were trained/tested on a further-filtered dataset of screen plays only, where we classified a play as a screen pass if the targeted receiver ran a screen route. Applying the same filters described above, 818 total screen plays were identified, and after the additional exclusions, 755 screen plays remained for training/testing the lateral direction and receiver group models.\nFor each model, we developed both an XGBoost model and a LASSO logistic model. XGBoost consistently produced more accurate predictions due to the presence of many nonlinear relationships and interaction effects among our pre-snap spatial features, patterns that LASSO’s linear structure could not capture as effectively.\nWe also considered generalized additive models (GAMs) and mixed-effects models as alternatives, but each under-performed relative to our chosen approaches. GAMs can capture nonlinear patterns in individual features, but aren’t as good at capturing how multiple features interact with each other, which XGBoost handles automatically. Mixed-effects models, which we considered for incorporating team as a random effect, were constrained by the limited number of observations per team (as few as 9 screen plays for some teams), which is insufficient to reliably estimate team-level variance components and risks unstable or overfit random-effect estimates.\nFeatures in all three models use pre-snap features only. Each model considered key overarching themes of game context, situation factors, team formations, historic tendencies, and spatial factors.\n\nModel Feature Sets\n\nScreen ProbabilityLateral DirectionTarget Receiver Group\n\n\n\nXGBoost Feature SetScreen probability Model Importance\n\n\n\n\n\n\n\n\n\n\n\n\nXGBoost Feature SetLateral Direction Model Importance\n\n\n\nFeatures isolated for use in LASSO model*\n\n\n\n\n\n\n\n\n\nXGBoost Feature SetReceiver group Model Importance"
+  },
+  {
+    "objectID": "CMSAC_report.html#results",
+    "href": "CMSAC_report.html#results",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Results",
+    "text": "Results\nWe evaluated our models using 3-fold cross-validation, with folds defined by week ranges (Weeks 1–3, 4–6, and 7–9). For each fold, the corresponding weeks served as the test set while the model trained on the remaining weeks, preserving separation to prevent data leakage and maintain data integrity.\nBaseline: Accuracy achievable by simply guessing the most frequent class every time, without using any model or features.\nAccuracy: Proportion of predictions the model got correct out of all predictions made.\nKappa: Measures how much better the model performs than random chance, adjusting for the class distribution. It ranges from -1 to 1, where 0 indicates performance no better than chance and 1 indicates perfect agreement. Kappa is especially useful here because it accounts for class imbalance in a way raw accuracy does not, a model can have high accuracy but low Kappa if it’s simply exploiting an imbalanced baseline rather than learning meaningful patterns.\n\n\\kappa = \\frac{p_o - p_e}{1 - p_e}\n where p_o is the observed accuracy and p_e is the expected accuracy under random chance, based on the class distribution.\nROC AUC: Measures the model’s ability to distinguish between classes across all possible classification thresholds, rather than at a single fixed cutoff. It ranges from 0.5 (no better than random guessing) to 1.0 (perfect separation between classes). Unlike accuracy, ROC AUC is threshold-independent and reflects the model’s ability to rank positive cases above negative ones.\n\n\\text{AUC} = P(\\text{score}(x^+) &gt; \\text{score}(x^-))\n where x^+ and x^- are a randomly chosen positive and negative observation, respectively.\n\nScreen ProbabilityLateral DirectionTarget Receiver Group\n\n\n\n\n\n\nNaive Guess Rate/Baseline = 51.6%\nKey Takeways: From these results we can see that the XGBoost model boosts accuracy from the baseline about\n\n\n\n\n\n\n\nCase StudyLOTO Model\n\n\n\n\n\n\n\n\n\nFor the Leave-One-Team-Out (LOTO) models, we trained on all screen passes excluding a given team, then evaluated on that team’s plays as the held-out test set. This procedure was repeated across all teams to produce team-specific performance results.\n\nLateral DirectionReciever Group\n\n\n\nKey Takeaways: These results suggest that certain teams are more “predictable” than others, though the analysis is limited by relatively small sample sizes at the team level. Predictability is also inherently bounded by the feature set: since this evaluation uses a LASSO model with only three features, eligible receiver count differential, split asymmetry, and running back lateral position relative to the ball at snap, the model is limited to whatever signal those three variables can capture. For example, when the Eagles show a clear imbalance across these features, they tend to favor that direction the majority of the time, improving prediction accuracy by 33% over simply guessing their most common direction. By contrast, applying the same approach to the Falcons performs over 4% worse than picking their most frequent direction, illustrating the variation in predictability across teams."
+  },
+  {
+    "objectID": "CMSAC_report.html#limitations",
+    "href": "CMSAC_report.html#limitations",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Limitations",
+    "text": "Limitations\n\nFuture Work"
+  },
+  {
+    "objectID": "CMSAC_report.html#acknowledgements",
+    "href": "CMSAC_report.html#acknowledgements",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis project would not have been possible without the help of Dr. Karim Kassam at Teamworks, whom helped assist and mentor our research process.\nWe also want to thank Erin Franke, Sara Colando, Dr. Ron Yurko and the CMSACamp TAs for their guidance as well as Quang Nguyen for distributing the data resources needed to conduct our study."
+  },
+  {
+    "objectID": "CMSAC_report.html#appendix",
+    "href": "CMSAC_report.html#appendix",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Appendix:",
+    "text": "Appendix:"
+  },
+  {
+    "objectID": "CMSAC_report.html#contact-information",
+    "href": "CMSAC_report.html#contact-information",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Contact Information",
+    "text": "Contact Information\nKrish Bothra, University of Wisconson-Madison, krishbothra3@gmail.com\nEthan Larimore, Rice University, el115@rice.edu\nJenna Lau, University of Texas at Austin, jennaaa.wl@gmail.com"
+  },
+  {
+    "objectID": "CMSAC_report.html#footnotes",
+    "href": "CMSAC_report.html#footnotes",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n“NFL Big Data Bowl 2025: Overview.” Kaggle, 2024, www.kaggle.com/competitions/nfl-big-data-bowl-2025/overview.↩︎"
+  },
+  {
+    "objectID": "Projects.html",
+    "href": "Projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Court IQ\n\n\n\n\n\n\n\n\nMay 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nEgo-Motion Estimation & BEV Mapping\n\n\n\n\n\n\n\n\nDec 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMarch Madness Bracket Predictor\n\n\n\n\n\n\n\n\nMar 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNFL Analytics Suite\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Experience",
@@ -96,13 +173,6 @@
     "title": "Experience",
     "section": "Technical Skills",
     "text": "Technical Skills\nLanguages: Python, Java, C++, SQL, JavaScript, HTML/CSS, Swift, MATLAB, R\nFrameworks/Tools: React, Next.js, Node.js, Firebase, ROS, PyTorch, OpenCV, Jupyter\nSystems: Linux, Git, WebRTC, WebTransport, Multithreading, REST APIs, Cloudflare CDN"
-  },
-  {
-    "objectID": "Projects.html",
-    "href": "Projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Court IQ\n\n\n\n\n\n\n\n\nMay 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nEgo-Motion Estimation & BEV Mapping\n\n\n\n\n\n\n\n\nDec 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMarch Madness Bracket Predictor\n\n\n\n\n\n\n\n\nMar 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNFL Analytics Suite\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "CMSAC_Pres.html#introduction",
