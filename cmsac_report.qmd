@@ -244,8 +244,7 @@ The XGBoost model was selected as it significantly outperformed the LASSO across
 ### Case Study
 
 ::: {style="text-align: center;"}
-![](Images/report/case_study_dashboard.png){width="50%"}
-![](Images/report/Recording%202026-07-17%20120952-02.gif){width="50%"}
+![](Images/report/case_study_dashboard.png){width="40%"}
 
 :::
 
