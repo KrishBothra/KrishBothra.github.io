@@ -175,13 +175,6 @@
     "text": "Technical Skills\nLanguages: Python, Java, C++, SQL, JavaScript, HTML/CSS, Swift, MATLAB, R\nFrameworks/Tools: React, Next.js, Node.js, Firebase, ROS, PyTorch, OpenCV, Jupyter\nSystems: Linux, Git, WebRTC, WebTransport, Multithreading, REST APIs, Cloudflare CDN"
   },
   {
-    "objectID": "CMSAC_Pres.html#introduction",
-    "href": "CMSAC_Pres.html#introduction",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
-    "section": "Introduction",
-    "text": "Introduction\n\n\n\nSince 2010, the proportion of passing plays being screens in the NFL has increased from 7.5% to over 10%\n\n\n\n\n\n\n\n\n\n\nGoals:\nPredict likelihood a screen pass occurs using pre-snap features\n\nIdentify lateral location\nIdentify target receiver group"
-  },
-  {
     "objectID": "CMSAC_Pres.html#motivating-example-la-vs.-car",
     "href": "CMSAC_Pres.html#motivating-example-la-vs.-car",
     "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
@@ -207,7 +200,7 @@
     "href": "CMSAC_Pres.html#modeling-approach",
     "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
     "section": "Modeling Approach",
-    "text": "Modeling Approach\n\nMethodology:\n\nCompare LASSO and XGBoost models\n3-Fold Cross Validation\nEvaluation Metrics: Accuracy, Kappa, ROC AUC"
+    "text": "Modeling Approach\n\nMethodology:\n\nCompare LASSO and XGBoost models\n3-Fold Cross Validation\nEvaluation Metrics: Baseline, Kappa, ROC AUC"
   },
   {
     "objectID": "CMSAC_Pres.html#model-1-screen-probability",
@@ -242,7 +235,7 @@
     "href": "CMSAC_Pres.html#discussion",
     "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
     "section": "Discussion",
-    "text": "Discussion\nXGBoost/LASSO hierarchical modeling framework to predict screen pass tendencies for coach-usable insights\n\n\n\nLimitations:\n\nSparse number of single-season screen plays per team\nPlayer turnover within teams\n\nFuture Work:\n\nSequential models for continuous pre-snap probability\nFind individual teams’ pre-snap “tells”"
+    "text": "Discussion\nXGBoost/LASSO hierarchical modeling framework to predict screen pass tendencies for coach-usable insights\n\n\n\nLimitation:\n\nSparse number of single-season screen plays per team\n\nFuture Work:\n\nSequential models for continuous pre-snap probability\nFind individual teams’ pre-snap “tells”"
   },
   {
     "objectID": "CMSAC_Pres.html#acknowledgements",

@@ -140,29 +140,6 @@ Krish Bothra, Ethan Larimore, Jenna Lau
 </div>
 
 </section>
-<section id="introduction" class="slide level2">
-<h2>Introduction</h2>
-<div class="quarto-layout-panel" data-layout="[[1], [ -1 ]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p>Since 2010, the proportion of passing plays being screens in the NFL has increased from 7.5% to over 10%</p>
-</div>
-</div>
-</div>
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-left">
-<figure>
-<p><img data-src="Images/report/clipboard-1229396113.png" class="quarto-figure quarto-figure-left" width="450" height="330"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<h3 id="goals">Goals:</h3>
-<p>Predict likelihood a screen pass occurs using pre-snap features</p>
-<ul>
-<li>Identify lateral location</li>
-<li>Identify target receiver group</li>
-</ul>
-</div></section>
 <section id="motivating-example-la-vs.-car" class="slide level2">
 <h2>Motivating Example: LA vs.&nbsp;CAR</h2>
 
@@ -207,7 +184,7 @@ Krish Bothra, Ethan Larimore, Jenna Lau
 <ul>
 <li>Compare LASSO and XGBoost models</li>
 <li>3-Fold Cross Validation</li>
-<li>Evaluation Metrics: Accuracy, Kappa, ROC AUC</li>
+<li>Evaluation Metrics: Baseline, Kappa, ROC AUC</li>
 </ul>
 </section>
 <section id="model-1-screen-probability" class="slide level2">
@@ -262,10 +239,9 @@ Krish Bothra, Ethan Larimore, Jenna Lau
 <div style="margin-top: 1.5em;">
 
 </div>
-<p><strong>Limitations:</strong></p>
+<p><strong>Limitation:</strong></p>
 <ul>
-<li><p>Sparse number of single-season screen plays per team</p></li>
-<li><p>Player turnover within teams</p></li>
+<li>Sparse number of single-season screen plays per team</li>
 </ul>
 <p><strong>Future Work:</strong></p>
 <ul>
