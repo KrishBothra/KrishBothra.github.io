@@ -11,25 +11,6 @@ format:
 editor: visual
 ---
 
-## Introduction
-
-::: {layout="[[1], [ -1 ]]"}
-Since 2010, the proportion of passing plays being screens in the NFL has increased from 7.5% to over 10%
-:::
-
-::: {.column width="50%"}
-![](Images/report/clipboard-1229396113.png){fig-align="left" width="450" height="330"}
-:::
-
-::: {.column width="50%"}
-### Goals:
-
-Predict likelihood a screen pass occurs using pre-snap features
-
--   Identify lateral location
--   Identify target receiver group
-:::
-
 ## Motivating Example: LA vs. CAR
 
 ![](Images/Presentation/Recording2026-07-17120952-01.gif){fig-align="center"}
@@ -67,7 +48,7 @@ Predict likelihood a screen pass occurs using pre-snap features
 
 -   Compare LASSO and XGBoost models
 -   3-Fold Cross Validation
--   Evaluation Metrics: Accuracy, Kappa, ROC AUC
+-   Evaluation Metrics: Baseline, Kappa, ROC AUC
 
 ## Model 1, Screen Probability:
 
@@ -128,11 +109,9 @@ XGBoost/LASSO hierarchical modeling framework to predict screen pass tendencies 
 ::: {style="margin-top: 1.5em;"}
 :::
 
-**Limitations:**
+**Limitation:**
 
 -   Sparse number of single-season screen plays per team
-
--   Player turnover within teams
 
 **Future Work:**
 
