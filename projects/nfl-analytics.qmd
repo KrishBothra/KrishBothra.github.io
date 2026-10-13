@@ -1,0 +1,33 @@
+---
+title: "NFL Analytics Suite"
+date: 2026-02-01
+image: /Images/NFL/bar-epa-22-25.png
+categories: [R, xgboost, tidymodels]
+---
+
+## Overview
+
+Built logistic and linear regression models in R to predict 4th-down go decisions and quantify Air/Rush Yards Over Expected (AYOE/RYOE) across 4 NFL seasons, controlling for game situation and opponent quality. Trained an XGBoost model ranking 80+ NFL backs by rush yards over expectation and produced publication-quality visuals covering EPA/play, pass rate, and field goal metrics league-wide.
+
+## Visuals
+
+![4th Down Go/No-Go Model (2021–25)](/Images/NFL/4th-Down-Linear-Regression-Model-21-25.png)
+
+![Air Yards Over Expected Model (2021–25)](/Images/NFL/Air-Yards-Over-Expected-Model-21-25.png)
+
+![EPA/Play by Team](/Images/NFL/bar-epa-22-25.png)
+
+![Run/Pass Rate by Player — Bears 2025](/Images/NFL/Bears-run-pass-rate-by-player-2025.png)
+
+![EPA per Play vs. Pass Rate (2022–25)](/Images/NFL/epaPlay-passRate-22-25.png)
+
+![Field Goal Rate: Field vs. Result vs. Grade (FG_OE)](/Images/NFL/fg_oe_rf_gt.png)
+
+![Pass Rush EPA (2025)](/Images/NFL/pass-rush-epa-25.png)
+
+![Quarterback Grade](/Images/NFL/qb_gt.png)
+
+![Rush Yards Over Expected — XGBoost Rankings](/Images/NFL/ryoe_xgBoost.png)
+
+## Tech Stack
+R, ggplot2, nflreadr, xgboost, tidymodels, dplyr

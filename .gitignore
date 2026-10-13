@@ -1,2 +1,4 @@
 node_modules/
 .claude/
+*.Rproj
+Rstudio-website.Rproj

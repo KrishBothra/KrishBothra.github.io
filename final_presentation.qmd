@@ -1,0 +1,146 @@
+---
+title: "Screen Machine:<br>Pre-Snap Play Prediction in the NFL"
+subtitle: "External Advisor: Dr. Karim Kassam, Teamworks"
+author: "Krish Bothra, Ethan Larimore, Jenna Lau"
+format: 
+  revealjs:
+    slide-number: true
+    center: false
+    output-file: "CMSAC_Pres.html"
+    embed-resources: false
+editor: visual
+---
+
+## Motivating Example: LA vs. CAR
+
+![](Images/Presentation/Recording2026-07-17120952-01.gif){fig-align="center"}
+
+## Data Overview
+
+::: {layout="[[1]]"}
+**Sources:** NFL Big Data Bowl 2025, nflfastR & nflreadr packages
+
+**Model Observations:** 2022 Passing Plays from Weeks 1-9
+:::
+
+::: {.column width="50%"}
+### Data Subsets:
+
+-   Game
+-   Play by Play
+-   Player play
+-   Tracking
+:::
+
+::: {.column width="50%"}
+![](Images/report/presentation_play%20(2)%20(1).gif){fig-align="left"}
+:::
+
+## No Significant Difference Between Share of Screen Targets by Position & Direction
+
+![](Images/report/eda_gt_tbl.png){fig-align="center"}
+
+## Modeling Approach
+
+![](Images/clipboard-2393408103.png){fig-align="center" width="700" height="auto"}
+
+**Methodology:**
+
+-   Compare LASSO and XGBoost models
+-   3-Fold Cross Validation
+-   Evaluation Metrics: Baseline, Kappa, ROC AUC
+
+## Model 1, Screen Probability:
+
+**Feature Set Overview:**
+
+-   Team-Level Historic Tendencies
+-   Play Context
+-   Spatial Positioning
+
+![](Images/report/model_results_table-02.png)
+
+## Conditional Probabilities:
+
+::::: {.columns style="display: flex; align-items: center;"}
+::: {.column width="60%"}
+**Model 2, Lateral Direction:**
+
+![](Images/report/combined_gt.png)
+
+**Model 3, Receiver Group:**
+
+![](Images/report/Screenshot%202026-07-19%20235134.png)
+:::
+
+::: {.column width="40%"}
+![](Images/report/ezgif.com-crop%20(1).gif){fig-align="center"}
+:::
+:::::
+
+## Case Study Application
+
+::: {.column width="35%"}
+![](Images/report/case_study_dashboard.png){width="820"}
+:::
+
+::: {.column width="65%"}
+![](Images/Presentation/Recording2026-07-17120952-01.gif){fig-align="default"}
+:::
+
+## Model Predictability by Team
+
+::: {.column width="50%"}
+**Lateral Direction:**
+
+![](Images/report/clipboard-208295644.png){width="396"}
+:::
+
+::: {.column width="50%"}
+**Target Receiver Group:**
+
+![](Images/report/loto_wr_top_bottom_poster2.png){width="394" height="500"}
+:::
+
+## Discussion
+
+XGBoost/LASSO hierarchical modeling framework to predict screen pass tendencies for coach-usable insights
+
+::: {style="margin-top: 1.5em;"}
+:::
+
+**Limitation:**
+
+-   Sparse number of single-season screen plays per team
+
+**Future Work:**
+
+-   Sequential models for continuous pre-snap probability
+
+-   Find individual teams’ pre-snap “tells”
+
+## Acknowledgements
+
+Special thanks to Karim Kassam, Erin Franke, Sara Colando, Dr. Ron Yurko, Quang Nguyen, and the CMSACamp TAs for their guidance throughout our study.
+
+## Appendix
+
+
+Lateral Distance Model VIP:
+
+![](Images/report/variable_importance.jpg){fig-align="center"}
+
+
+## Appendix Continued
+
+::: {.column width="50%"}
+Receiver Group Model VIP:
+
+![](Images/clipboard-1253991943.png)
+:::
+
+::: {.column width="50%"}
+Screen Model VIP:
+
+![](Images/report/clipboard-3398114494.png)
+:::
