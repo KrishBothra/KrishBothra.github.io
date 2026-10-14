@@ -1,4 +1,6 @@
 ---
+description: "Estimated a vehicle’s 3D trajectory and built bird’s-eye-view maps from stereo video and RGB-D point clouds using Python, NumPy, and OpenCV."
+order: 5
 title: "Ego-Motion Estimation & BEV Mapping"
 date: 2025-12-01
 image: /Images/trajectory/trajectory.png

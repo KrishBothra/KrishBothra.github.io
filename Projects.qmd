@@ -1,5 +1,17 @@
 ---
 title: "Projects"
-listing: 
-  contents: projects
+listing:
+  contents:
+    - cmsac_report.qmd
+    - abs-challenge-report.qmd
+    - project_writeup.qmd
+    - projects/*.qmd
+  type: grid
+  grid-columns: 2
+  fields: [title, description, categories]
+  sort: "order asc"
+  max-description-length: 300
+  page-size: 12
 ---
+
+Selected research and applied projects. Choose a project to read the full report or explore the work.
