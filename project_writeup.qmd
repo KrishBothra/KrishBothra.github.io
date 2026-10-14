@@ -1,0 +1,195 @@
+---
+subtitle: "Oklahoma City Thunder | Shot probability modeling"
+description: "An OKC project estimating NBA shot make probability from shot location, defender proximity, movement, and game context, with season-based validation and calibration checks."
+categories: [OKC, Basketball, XGBoost]
+order: 3
+title: "What Makes a Good Shot? Predicting NBA Shot Make Probability"
+format:
+  html:
+    theme: cosmo
+    embed-resources: false
+    toc: true
+    toc-location: left
+    toc-title: "Contents"
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dpi: 180
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+# Keep this chunk active: it loads packages and saved results for rendering.
+# Run project_code.R first to regenerate the analysis_results tables.
+# This document reads measured results; it does not train or tune a model.
+library(tidyverse)
+
+scores <- read_csv("analysis_results/validation_metrics.csv")
+comparison <- read_csv("analysis_results/model_comparison.csv")
+importance <- read_csv("analysis_results/feature_importance.csv")
+calibration <- read_csv("analysis_results/calibration.csv")
+groups <- read_csv("analysis_results/shot_group_metrics.csv")
+selected <- read_csv("analysis_results/selected_parameters.csv")
+checks <- read_csv("analysis_results/submission_verification.csv")
+
+cv <- scores |> filter(evaluation == "Development CV selected model")
+audit <- scores |> filter(evaluation == "Previously exposed audit reassessment")
+baseline <- scores |> filter(evaluation == "Development CV marginal baseline")
+heaves <- groups |> filter(group == "shottype", level == "heave")
+
+# A shared theme keeps the report's plots consistent.
+theme_set(theme_minimal(base_size = 10))
+```
+
+## Introduction
+
+An open dunk and a contested jumper can both be worth two points, but they are not equally easy shots. Distance matters, but so does the defense. Is someone right next to the shooter? Are they closing in? Is the shooter rushing to beat the shot clock?
+
+For this project, I used the supplied NBA shot data to predict how likely each shot was to go in. I also wanted to understand which details mattered most to the model, instead of just getting a set of predictions.
+
+## Data
+
+I only used the data provided for this project. The training set has **425,719 shots where the shooter was not fouled**, along with whether each shot went in. The testing set has **213,977 shots**, but their outcomes are not provided. About **45.81%** of the training shots were made.
+
+Here is an overview of the information used in the model:
+
+- **The shot itself:** Distance from the basket, court position, shot type, and whether it was a three-pointer.
+- **The defense:** How many defenders contested the shot and how close they were to the shooter.
+- **Movement:** The shooter's speed and the closest defender's distance at four moments before release.
+- **Game situation:** Time left on the shot clock, dribbles before the shot, and whether it happened in the halfcourt, in transition, or right after a second chance.
+
+Before building the model, I changed the TRUE/FALSE outcomes into make/miss labels. The `closestdefapproach` column stored four distances together inside braces, so I split them into separate columns. They show the defender's distance at 1, 0.75, 0.5, and 0.25 seconds before release. I also calculated how much the distance changed over the last second and how quickly it changed over the last quarter-second. These values show whether the shooter and defender were getting closer, not just how the defender moved.
+
+I checked the court coordinates using the basket location in the brief, **(-41.75, 0)**. Distances calculated from those coordinates were within 0.01 feet of the provided distances. I also checked the missing defender distances. They meant there was no defender in that contester slot, so I left them missing instead of filling in an average distance.
+
+I used shot IDs to put the predictions in the right rows, not to predict makes. I left player and team IDs out of the model and used season IDs only to split the data for evaluation. This keeps the model simpler, but it means two players taking the same type of shot in the same situation can receive the same prediction even if their shooting ability differs.
+
+<!-- {{< pagebreak >}} -->
+
+## Methodology
+
+I chose XGBoost because shot difficulty depends on several things working together. For example, being close to the basket may mean something different for a dunk than for a contested layup. XGBoost can learn these combinations and changes in patterns without me having to write a separate rule for each one. It also handles the missing contester distances without replacing them with made-up values.
+
+A basic logistic regression would be easier to explain, but I would need to add curved relationships and interactions to let it handle those patterns. A GAM could learn curves for individual features, but interactions would still need extra choices. A single decision tree would be easy to follow, but its predictions can change a lot depending on the training data. Random forests are another reasonable option, since they also combine trees and can learn complex patterns.
+
+XGBoost was also a practical choice because I had used its recipe/workflow setup in my earlier R work. With the 20-hour limit, I focused on a small comparison I could run and explain. The tradeoff is that hundreds of trees are harder to interpret than a simple regression or one tree, and they can overfit. That is why I checked performance across seasons and included simpler depth-one models. The final comparison tested XGBoost settings, not every model family, so these results do not prove XGBoost is always the best choice.
+
+### Model Settings
+
+I tried six combinations: tree depths of **1, 3, and 5**, each with learning rates of **0.01 and 0.1**. Depth controls how many levels of questions a tree can ask, and learning rate controls how much each new tree changes the prediction. Each model used 500 trees, 80% of the training rows per tree, and `min_n = 10`. As a basic comparison, I also predicted the training make rate for every shot. I did not combine models or adjust their probabilities afterward.
+
+### Validation
+
+The training data have two seasons, and the testing data have a different season. I set aside 20% of each training season for a final check, called the **audit**, using seed 20270927. For the remaining shots, I trained on one season and checked predictions on the other, then switched them. This is **two-fold cross-validation grouped by season**. The data-preparation steps were learned from the training side each time.
+
+This checks whether the model works on a different season. The season labels do not tell me which came first, so I cannot call it a test of future-season performance. There were also no game IDs to split by game.
+
+<!-- {{< pagebreak >}} -->
+
+## Results
+
+**Log Loss:** A score for probability predictions. It gives a large penalty when the model is confident but wrong. Lower is better, and I used this score to pick the model.
+
+**Brier Score:** The average squared difference between the predicted probability and the result: 1 for a make and 0 for a miss. Lower is better here too.
+
+```{r}
+#| label: fig-comparison
+#| fig-width: 6.7
+#| fig-height: 1.8
+#| fig-cap: "Mean log loss across the two held-out seasons. Lower is better."
+comparison |>
+  mutate(setting = paste0("Depth ", tree_depth, "; rate ", learn_rate)) |>
+  ggplot(aes(mean, reorder(setting, mean))) +
+  geom_point(color = "#237A91", size = 2.5) +
+  geom_text(aes(label = sprintf("%.5f", mean)), hjust = -0.2, size = 3) +
+  scale_x_continuous(expand = expansion(mult = c(0.08, 0.3))) +
+  labs(x = "Mean validation log loss", y = NULL)
+```
+
+**Key Takeaways:** The model with **depth `r selected$tree_depth` and learning rate `r selected$learn_rate`** had the lowest average log loss. Deeper trees were not always better. The selected model also beat the simpler depth-one models. Still, the two best settings were close, so the same setting might not win on another season.
+
+| Evaluation | Log loss | Brier score |
+|:--|--:|--:|
+| Constant prediction: CV | `r sprintf("%.5f", baseline$log_loss)` | `r sprintf("%.5f", baseline$brier)` |
+| Selected model: CV | `r sprintf("%.5f", cv$log_loss)` | `r sprintf("%.5f", cv$brier)` |
+| Audit: repeat check | `r sprintf("%.5f", audit$log_loss)` | `r sprintf("%.5f", audit$brier)` |
+
+The selected model's log loss was about **`r sprintf("%.1f", 100 * (baseline$log_loss - cv$log_loss) / baseline$log_loss)`% lower** than predicting the same probability for every shot. The table combines all cross-validation shots, while the graph averages the two season scores. This gives slightly different numbers because the seasons have different shot counts.
+
+<!-- {{< pagebreak >}} -->
+
+### Model Feature Importance
+
+```{r}
+#| label: fig-importance
+#| fig-width: 6.7
+#| fig-height: 2.7
+#| fig-cap: "The ten features that contributed the most to improving the model's training predictions, measured by split gain."
+importance |>
+  slice_max(Importance, n = 10) |>
+  ggplot(aes(Importance, reorder(Variable, Importance))) +
+  geom_col(fill = "#237A91", width = 0.7) +
+  scale_x_continuous(labels = scales::label_percent()) +
+  labs(x = "Share of split gain", y = NULL)
+```
+
+**Key Takeaways:** Shot distance had the highest importance, with about **47%** of the model's split gain. Dunk status was next at **16%**, followed by first-contester distance at **12%**. This suggests that shot location, shot type, and nearby defenders were especially useful to this model. Shooter speed and the shot clock also helped.
+
+Split gain measures how much a feature helped improve the model during training. It does not tell me that moving a defender farther away would cause a certain change in shooting percentage. Some features also describe similar things. Distance and court coordinates overlap, for example, so a lower ranking does not automatically mean a feature is unimportant.
+
+### Are the Probabilities Reasonable?
+
+```{r}
+#| label: fig-calibration
+#| fig-width: 6.7
+#| fig-height: 2.6
+#| fig-cap: "Audit shots viewed in earlier work, grouped by predicted probability. Points near the dashed line show closer agreement with actual make rates. Larger points contain more shots."
+ggplot(calibration, aes(predicted, observed)) +
+  geom_abline(slope = 1, intercept = 0, linetype = 2, color = "grey50") +
+  geom_point(aes(size = n), color = "#237A91") +
+  coord_equal(xlim = c(0, 1), ylim = c(0, 1)) +
+  labs(x = "Predicted probability", y = "Observed make rate", size = "Shots")
+```
+
+**Key Takeaways:** On the audit shots, the model predicted **`r sprintf("%.2f", 100 * audit$predicted)`%** would go in, compared with **`r sprintf("%.2f", 100 * audit$observed)`%** that actually did. Most groups are close to the dashed line. That is encouraging, but it does not mean the model gets every type of shot equally right.
+
+Heaves were one weakness. For **`r heaves$n` shots**, the model predicted an average make chance of **`r sprintf("%.1f", 100 * heaves$predicted)`%**, but only **`r sprintf("%.1f", 100 * heaves$observed)`%** went in. The model was too optimistic about these shots. There were not many heaves to judge from, though, and I did not change the model based on this audit result.
+
+<!-- {{< pagebreak >}} -->
+
+### What I Tried and Learned
+
+Earlier work tried a more flexible logistic regression, estimates of player shooting ability, and a different way of fitting XGBoost. For the final version, I used XGBoost with a recipe and workflow. The results here are from that final version. They do not show that every earlier approach was worse.
+
+One thing I learned was that small data-cleaning details can matter. R's automatic column-type guessing could miss the rare fourth-contester distances, so I set the types explicitly. The TRUE/FALSE outcomes and the four distances stored in one column also needed cleaning. Most importantly, a missing defender distance meant there was no defender in that slot, not that I needed to guess a distance.
+
+
+## Limitations and Future Work
+
+**The model does not know who is shooting.** I left player IDs out, so two players with the same shot details would receive the same prediction. In reality, their shooting ability could be very different. The model describes the shot situation, but it can miss an important part of what makes a shot likely to go in.
+
+**It struggles with some uncommon shots.** Heaves are a good example: the model gave them about a 15.8% chance of going in, but only 7.8% were made in the audit. There were just 217 heaves in that group, so there is less evidence to judge them than there is for jumpers or layups. Good overall results can hide errors like this.
+
+**Two seasons do not tell the whole story.** Training on one season and checking the other gives me a useful comparison, but it does not show how the model will perform in every season. There were no game IDs, so I also could not check performance by game. The data leave out attempts where the shooter was fouled, which means this model does not cover all scoring situations.
+
+With more time and more data provided for the project, I would focus on:
+
+- **More seasons and game information:** More seasons, game IDs, and dates would let me test the model on later games and keep shots from the same game together.
+- **More details about the shot:** Release height, balance, pass quality, and how the shooter got open could help explain differences between otherwise similar shots.
+- **Player ability and rare shots:** I would consider testing player shooting estimates based only on training shots, with extra caution for players with few attempts. More heaves would also help check that weak spot.
+- **Checking the probabilities:** If I tried adjusting the probabilities, I would use separate data to fit and test the adjustment, rather than changing them to match audit results I had already seen.
+
+
+
+
+
+
+<!-- Open in RStudio and click Render, or run:
+quarto render project_writeup.qmd --to typst
+Optional HTML: quarto render project_writeup.qmd --to html
+-->

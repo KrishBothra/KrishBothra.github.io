@@ -1,4 +1,6 @@
 ---
+description: "An iOS app for coaches to design drills, track player statistics, and analyze performance trends, built with Swift, Firebase, and external APIs."
+order: 4
 title: "Court IQ"
 date: 2025-05-01
 image: /Images/CourtIQ/CourtIQ_Logo.png

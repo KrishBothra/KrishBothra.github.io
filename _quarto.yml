@@ -4,8 +4,10 @@ project:
     - "Images/**"
   render:
     - "*.qmd"
+    - "projects/*.qmd"
 
 website:
+  site-url: "https://krishbothra.github.io"
   title: "Krish Bothra"
   favicon: Images/favicon-32x32.png
   navbar:

@@ -1,4 +1,6 @@
 ---
+description: "Models and visualizations of fourth-down decisions, rushing and passing yards over expected, and team performance across four NFL seasons."
+order: 7
 title: "NFL Analytics Suite"
 date: 2026-02-01
 image: /Images/NFL/bar-epa-22-25.png
@@ -13,7 +15,7 @@ Built logistic and linear regression models in R to predict 4th-down go decision
 
 ![4th Down Go/No-Go Model (2021–25)](/Images/NFL/4th-Down-Linear-Regression-Model-21-25.png)
 
-![Air Yards Over Expected Model (2021–25)](/Images/NFL/Air-Yards-Over-Expected-Model-21-25.png)
+![Air Yards Over Expected Model (2021–25)](/Images/NFL/Air-Yards-Over-Expected-Linear-Regression-Model-21-25.png)
 
 ![EPA/Play by Team](/Images/NFL/bar-epa-22-25.png)
 

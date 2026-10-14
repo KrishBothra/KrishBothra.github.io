@@ -1,4 +1,8 @@
 ---
+subtitle: "Carnegie Mellon University | Undergraduate research"
+description: "Undergraduate research at Carnegie Mellon using NFL player-tracking data to predict screen passes, their direction, and the intended receiver group before the snap."
+categories: [CMU, NFL, XGBoost]
+order: 1
 title: "Screen Machine: Pre-Snap Play Prediction in the NFL"
 author:
  - Krish Bothra
@@ -14,37 +18,18 @@ format:
   toc: true
   toc-location: left
   toc-title: "Contents"
-  include-in-header:
-    text: |
-      <style>
-      #quarto-header, .navbar {
-        display: none !important;
-      }
-      body {
-        margin-top: 0 !important;
-      }
-      @media (min-width: 900px) {
-        nav#TOC::before {
-          content: "";
-          display: block;
-          background-image: url("https://msstate.retain.io/assets/Teamworks-Symbol_Black-1da229d36abb5c0ca55ad5b22ec423f421ba49fc0ea39671433cd93c46180a0a.png");
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          height: 225px;
-          margin-bottom: 2rem;
-        }
-      }
-        </style>
+
 execute:
  echo: false
  warning: false
  message: false
-embed-resources: true
-output-file: CMSAC_report.html
+embed-resources: false
+output-file: cmsac_report.html
 ---
 
 ------------------------------------------------------------------------
+
+[View the final presentation](final_presentation.qmd){.btn .btn-outline-primary}
 
 ## Introduction
 
