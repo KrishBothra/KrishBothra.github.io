@@ -8,3 +8,5 @@ Rstudio-website.Rproj
 
 /.quarto/
 **/*.quarto_ipynb
+*.pper
+/.Rproj.user
