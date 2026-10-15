@@ -11,3 +11,4 @@ Rstudio-website.Rproj
 *.pper
 /.Rproj.user
 .DS_Store
+*.pper
