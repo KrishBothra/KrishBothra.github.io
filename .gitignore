@@ -10,3 +10,4 @@ Rstudio-website.Rproj
 **/*.quarto_ipynb
 *.pper
 /.Rproj.user
+.DS_Store
