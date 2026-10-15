@@ -165,14 +165,14 @@
     "href": "about.html",
     "title": "Experience",
     "section": "",
-    "text": "AI & Data Engineering Intern — Pheydrus (Mar. 2026 – Present)\nBuilding AI-powered automation agents with Claude, ManyChat, and Zapier for marketing and sales workflows, and a cross-platform insights dashboard aggregating funnel metrics across Meta Ads, SamCart, WebinarJam, and Flodesk.\nPerceptions Team Member — Wisconsin Autonomous, UW–Madison (Aug. 2025 – Present)\nEngineering a real-time Bird’s-Eye View visualization system for autonomous driving on NVIDIA Jetson hardware, with a multithreaded Python backend and WebRTC/WebTransport streaming.\nComputer Science Researcher / Intern — UC Santa Cruz (June 2024 – Aug. 2024)\nResearched Visible Light Communication (VLC) as a Wi-Fi complement, designing custom packet structures with OOK modulation and analyzing BER/bitrate trade-offs.\nWeb Development Intern — Boston Innovations (Mar. 2024 – May 2024)\nBuilt and deployed a production company homepage with React, Next.js, and Cloudflare.\nLead Teacher (7/8) & Webmaster — Comp Sci Kids (Sep. 2022 – May 2025)\nTaught CS fundamentals to grades 1–8 and maintained the organization’s website using React, REST APIs, SQL, and MongoDB."
+    "text": "Player Personnel / Recruiting Assistant — University of Wisconsin–Madison Football Team (Sep. 2026 – Present)\nMadison, WI\nUndergraduate Researcher — Carnegie Mellon University Sports Analytics Camp (June 2026 – July 2026)\nPittsburgh, PA\nAI & Data Engineering Intern — Pheydrus (Mar. 2026 – Jun 2026)\nRemote\nComputer Science Researcher / Intern — UC Santa Cruz (June 2024 – Aug. 2024)\nSanta Cruz, CA\nLead Teacher (7/8) & Webmaster — Comp Sci Kids (Sep. 2022 – May 2025)"
   },
   {
     "objectID": "about.html#technical-skills",
     "href": "about.html#technical-skills",
     "title": "Experience",
     "section": "Technical Skills",
-    "text": "Technical Skills\nLanguages: Python, Java, C++, SQL, JavaScript, HTML/CSS, Swift, MATLAB, R\nFrameworks/Tools: React, Next.js, Node.js, Firebase, ROS, PyTorch, OpenCV, Jupyter\nSystems: Linux, Git, WebRTC, WebTransport, Multithreading, REST APIs, Cloudflare CDN"
+    "text": "Technical Skills\nLanguages: Python, Java, C++, SQL, JavaScript, HTML/CSS, Swift, MATLAB, R\nFrameworks/Tools: React, Next.js, Node.js, Firebase, ROS, PyTorch, OpenCV, Jupyter, NumPy, pandas, Matplotlib\nSystems: Linux, Git, WebRTC, WebTransport, Multithreading, REST APIs, Cloudflare CDN, MySQL, MongoDB, Nginx, AWS, Azure\nDevelopment & Productivity Tools: VS Code, IntelliJ, PyCharm, Xcode, Android Studio, Microsoft Office"
   },
   {
     "objectID": "CMSAC_Pres.html#motivating-example-la-vs.-car",
@@ -698,5 +698,89 @@
     "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
     "section": "Appendix Continued",
     "text": "Appendix Continued\n\nReceiver Group Model VIP:\n\n\nScreen Model VIP:"
+  },
+  {
+    "objectID": "final_presentation.html#data-overview",
+    "href": "final_presentation.html#data-overview",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Data Overview",
+    "text": "Data Overview\n\n\n\nSources: NFL Big Data Bowl 2025, nflfastR & nflreadr packages\n\n\n\n\nModel Observations: 2022 Passing Plays from Weeks 1-9\n\n\n\n\n\nData Subsets:\n\nGame\nPlay by Play\nPlayer play\nTracking"
+  },
+  {
+    "objectID": "final_presentation.html#no-significant-difference-between-share-of-screen-targets-by-position-direction",
+    "href": "final_presentation.html#no-significant-difference-between-share-of-screen-targets-by-position-direction",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "No Significant Difference Between Share of Screen Targets by Position & Direction",
+    "text": "No Significant Difference Between Share of Screen Targets by Position & Direction"
+  },
+  {
+    "objectID": "final_presentation.html#modeling-approach",
+    "href": "final_presentation.html#modeling-approach",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Modeling Approach",
+    "text": "Modeling Approach\n\n\n\n\n\nMethodology:\n\nCompare LASSO and XGBoost models\n3-Fold Cross Validation\nEvaluation Metrics: Baseline, Kappa, ROC AUC"
+  },
+  {
+    "objectID": "final_presentation.html#model-1-screen-probability",
+    "href": "final_presentation.html#model-1-screen-probability",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Model 1, Screen Probability:",
+    "text": "Model 1, Screen Probability:\nFeature Set Overview:\n\nTeam-Level Historic Tendencies\nPlay Context\nSpatial Positioning"
+  },
+  {
+    "objectID": "final_presentation.html#conditional-probabilities",
+    "href": "final_presentation.html#conditional-probabilities",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Conditional Probabilities:",
+    "text": "Conditional Probabilities:\n\n\nModel 2, Lateral Direction:\n\nModel 3, Receiver Group:"
+  },
+  {
+    "objectID": "final_presentation.html#case-study-application",
+    "href": "final_presentation.html#case-study-application",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Case Study Application",
+    "text": "Case Study Application"
+  },
+  {
+    "objectID": "final_presentation.html#model-predictability-by-team",
+    "href": "final_presentation.html#model-predictability-by-team",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Model Predictability by Team",
+    "text": "Model Predictability by Team\n\nLateral Direction:\n\n\n\nTarget Receiver Group:"
+  },
+  {
+    "objectID": "final_presentation.html#discussion",
+    "href": "final_presentation.html#discussion",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Discussion",
+    "text": "Discussion\nXGBoost/LASSO hierarchical modeling framework to predict screen pass tendencies for coach-usable insights\n\n\n\nLimitation:\n\nSparse number of single-season screen plays per team\n\nFuture Work:\n\nSequential models for continuous pre-snap probability\nFind individual teams’ pre-snap “tells”"
+  },
+  {
+    "objectID": "final_presentation.html#acknowledgements",
+    "href": "final_presentation.html#acknowledgements",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nSpecial thanks to Karim Kassam, Erin Franke, Sara Colando, Dr. Ron Yurko, Quang Nguyen, and the CMSACamp TAs for their guidance throughout our study."
+  },
+  {
+    "objectID": "final_presentation.html#appendix",
+    "href": "final_presentation.html#appendix",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Appendix",
+    "text": "Appendix\nLateral Distance Model VIP:"
+  },
+  {
+    "objectID": "final_presentation.html#appendix-continued",
+    "href": "final_presentation.html#appendix-continued",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Appendix Continued",
+    "text": "Appendix Continued\n\nReceiver Group Model VIP:\n\n\n\nScreen Model VIP:"
+  },
+  {
+    "objectID": "about.html#leadership-campus-involvement",
+    "href": "about.html#leadership-campus-involvement",
+    "title": "Experience",
+    "section": "Leadership & Campus Involvement",
+    "text": "Leadership & Campus Involvement\nProject Manager — Wisconsin Tech Consulting (Aug. 2026 – Present)\n\nLead 6 analysts studying Debrief user drop-off and engagement, guiding product and investor-facing analytics.\nOversee app stress testing to identify performance issues before partnership-driven growth.\n\nEvents Board Member — Indian Student Association (May 2026 – Present)\n\nOrganize campus events that connect students in the Indian community.\n\nPerceptions Team Member — Wisconsin Autonomous, UW–Madison (Aug. 2025 – May 2026)\n\nEngineering a real-time Bird’s-Eye View visualization system for autonomous driving on NVIDIA Jetson hardware, with a multithreaded Python backend and WebRTC/WebTransport streaming.\nBuilt a real-time human-machine interface displaying perception data and used aiortc and aioquic for low-latency, bidirectional streaming between onboard systems and remote interfaces.\nAutomated L2 error analysis, tested Linux systems, and debugged networking and threading issues."
   }
 ]
