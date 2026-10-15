@@ -4,7 +4,7 @@ order: 7
 title: "NFL Analytics Suite"
 date: 2026-02-01
 image: /Images/NFL/bar-epa-22-25.png
-categories: [R, xgboost, tidymodels]
+categories: [NFL, Football]
 ---
 
 ## Overview

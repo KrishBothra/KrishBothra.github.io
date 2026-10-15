@@ -23,7 +23,7 @@ Hi, thanks so much for visiting my website! I'm a Computer Science & Data Scienc
 
 I love working at the intersection of data, sports, and software — whether that's predicting March Madness upsets, modeling NFL play outcomes, or building perception systems for autonomous vehicles. Outside of coursework, I enjoy digging into sports analytics projects and exploring new ways AI can automate real-world workflows.
 
-This summer I am participating in the [Carnegie Mellon Sports Analytics Camp (CMSACamp)](https://www.cmu.edu/dietrich/statistics-datascience/engagement/summer/cmsa-camp.html).
+This previous summer I participated in the [Carnegie Mellon Sports Analytics Camp (CMSACamp)](https://www.cmu.edu/dietrich/statistics-datascience/engagement/summer/cmsa-camp.html).
 
 
 

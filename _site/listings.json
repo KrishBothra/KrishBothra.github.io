@@ -2,9 +2,9 @@
   {
     "listing": "/Projects.html",
     "items": [
-      "/cmsac_report.html",
-      "/abs-challenge-report.html",
-      "/project_writeup.html",
+      "/projects/cmsac_report.html",
+      "/projects/abs-challenge-report.html",
+      "/projects/project_writeup.html",
       "/projects/courtiq.html",
       "/projects/ego-motion.html",
       "/projects/march-madness.html",

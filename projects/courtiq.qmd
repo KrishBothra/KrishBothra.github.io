@@ -4,7 +4,7 @@ order: 4
 title: "Court IQ"
 date: 2025-05-01
 image: /Images/CourtIQ/CourtIQ_Logo.png
-categories: [Swift, Firebase, iOS]
+categories: [Tennis, Swift, Firebase, iOS]
 ---
 
 ## Overview

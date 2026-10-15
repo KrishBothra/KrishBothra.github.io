@@ -81,7 +81,7 @@
     "href": "index.html#about-me",
     "title": "Krish Bothra",
     "section": "About me",
-    "text": "About me\nHi, thanks so much for visiting my website! I’m a Computer Science & Data Science student at UW–Madison, passionate about AI systems, sports analytics, and building things that turn data into decisions.\nI love working at the intersection of data, sports, and software — whether that’s predicting March Madness upsets, modeling NFL play outcomes, or building perception systems for autonomous vehicles. Outside of coursework, I enjoy digging into sports analytics projects and exploring new ways AI can automate real-world workflows.\nThis summer I am participating in the Carnegie Mellon Sports Analytics Camp (CMSACamp)."
+    "text": "About me\nHi, thanks so much for visiting my website! I’m a Computer Science & Data Science student at UW–Madison, passionate about AI systems, sports analytics, and building things that turn data into decisions.\nI love working at the intersection of data, sports, and software — whether that’s predicting March Madness upsets, modeling NFL play outcomes, or building perception systems for autonomous vehicles. Outside of coursework, I enjoy digging into sports analytics projects and exploring new ways AI can automate real-world workflows.\nThis previous summer I participated in the Carnegie Mellon Sports Analytics Camp (CMSACamp)."
   },
   {
     "objectID": "CMSAC_report.html#introduction",
@@ -158,7 +158,7 @@
     "href": "Projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Court IQ\n\n\n\n\n\n\n\n\nMay 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nEgo-Motion Estimation & BEV Mapping\n\n\n\n\n\n\n\n\nDec 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMarch Madness Bracket Predictor\n\n\n\n\n\n\n\n\nMar 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNFL Analytics Suite\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Selected research and applied projects. Choose a project to read the full report or explore the work.\n\n\n\n\n\n\n\n\n\n\n\nScreen Machine: Pre-Snap Play Prediction in the NFL\n\n\n\nNFL\n\nFootball\n\n\n\nUndergraduate research at Carnegie Mellon using NFL player-tracking data to predict screen passes, their direction, and the intended receiver group before the snap.\n\n\n\n\n\n\n\n\n\nABS Challenge Likelihood\n\n\n\nMLB\n\nBaseball\n\n\n\nA project modeling whether a pitch will be challenged, which team will challenge, and whether the call will be overturned, using R and XGBoost.\n\n\n\n\n\n\n\n\n\nWhat Makes a Good Shot? Predicting NBA Shot Make Probability\n\n\n\nNBA\n\nBasketball\n\n\n\nA project estimating NBA shot make probability from shot location, defender proximity, movement, and game context, with season-based validation and calibration checks.\n\n\n\n\n\n\n\n\n\nCourt IQ\n\n\n\nTennis\n\nSwift\n\nFirebase\n\niOS\n\n\n\nAn iOS app for coaches to design drills, track player statistics, and analyze performance trends, built with Swift, Firebase, and external APIs.\n\n\n\n\n\n\n\n\n\nEgo-Motion Estimation & BEV Mapping\n\n\n\nPython\n\nOpenCV\n\nNumPy\n\n\n\nEstimated a vehicle’s 3D trajectory and built bird’s-eye-view maps from stereo video and RGB-D point clouds using Python, NumPy, and OpenCV.\n\n\n\n\n\n\n\n\n\nMarch Madness Bracket Predictor\n\n\n\nNCAAB\n\nBasketball\n\n\n\nAn ensemble of XGBoost and logistic regression models predicting NCAA tournament outcomes using advanced team metrics and historical matchups.\n\n\n\n\n\n\n\n\n\nNFL Analytics Suite\n\n\n\nNFL\n\nFootball\n\n\n\nModels and visualizations of fourth-down decisions, rushing and passing yards over expected, and team performance across four NFL seasons.\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -376,5 +376,327 @@
     "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
     "section": "Footnotes",
     "text": "Footnotes\n\n\n“NFL Big Data Bowl 2025: Overview.” Kaggle, 2024, www.kaggle.com/competitions/nfl-big-data-bowl-2025/overview.↩︎"
+  },
+  {
+    "objectID": "projects/project_writeup.html",
+    "href": "projects/project_writeup.html",
+    "title": "What Makes a Good Shot? Predicting NBA Shot Make Probability",
+    "section": "",
+    "text": "An open dunk and a contested jumper can both be worth two points, but they are not equally easy shots. Distance matters, but so does the defense. Is someone right next to the shooter? Are they closing in? Is the shooter rushing to beat the shot clock?\nFor this project, I used the supplied NBA shot data to predict how likely each shot was to go in. I also wanted to understand which details mattered most to the model, instead of just getting a set of predictions."
+  },
+  {
+    "objectID": "projects/project_writeup.html#introduction",
+    "href": "projects/project_writeup.html#introduction",
+    "title": "What Makes a Good Shot? Predicting NBA Shot Make Probability",
+    "section": "",
+    "text": "An open dunk and a contested jumper can both be worth two points, but they are not equally easy shots. Distance matters, but so does the defense. Is someone right next to the shooter? Are they closing in? Is the shooter rushing to beat the shot clock?\nFor this project, I used the supplied NBA shot data to predict how likely each shot was to go in. I also wanted to understand which details mattered most to the model, instead of just getting a set of predictions."
+  },
+  {
+    "objectID": "projects/project_writeup.html#data",
+    "href": "projects/project_writeup.html#data",
+    "title": "What Makes a Good Shot? Predicting NBA Shot Make Probability",
+    "section": "Data",
+    "text": "Data\nI only used the data provided for this project. The training set has 425,719 shots where the shooter was not fouled, along with whether each shot went in. The testing set has 213,977 shots, but their outcomes are not provided. About 45.81% of the training shots were made.\nHere is an overview of the information used in the model:\n\nThe shot itself: Distance from the basket, court position, shot type, and whether it was a three-pointer.\nThe defense: How many defenders contested the shot and how close they were to the shooter.\nMovement: The shooter’s speed and the closest defender’s distance at four moments before release.\nGame situation: Time left on the shot clock, dribbles before the shot, and whether it happened in the halfcourt, in transition, or right after a second chance.\n\nBefore building the model, I changed the TRUE/FALSE outcomes into make/miss labels. The closestdefapproach column stored four distances together inside braces, so I split them into separate columns. They show the defender’s distance at 1, 0.75, 0.5, and 0.25 seconds before release. I also calculated how much the distance changed over the last second and how quickly it changed over the last quarter-second. These values show whether the shooter and defender were getting closer, not just how the defender moved.\nI checked the court coordinates using the basket location in the brief, (-41.75, 0). Distances calculated from those coordinates were within 0.01 feet of the provided distances. I also checked the missing defender distances. They meant there was no defender in that contester slot, so I left them missing instead of filling in an average distance.\nI used shot IDs to put the predictions in the right rows, not to predict makes. I left player and team IDs out of the model and used season IDs only to split the data for evaluation. This keeps the model simpler, but it means two players taking the same type of shot in the same situation can receive the same prediction even if their shooting ability differs."
+  },
+  {
+    "objectID": "projects/project_writeup.html#methodology",
+    "href": "projects/project_writeup.html#methodology",
+    "title": "What Makes a Good Shot? Predicting NBA Shot Make Probability",
+    "section": "Methodology",
+    "text": "Methodology\nI chose XGBoost because shot difficulty depends on several things working together. For example, being close to the basket may mean something different for a dunk than for a contested layup. XGBoost can learn these combinations and changes in patterns without me having to write a separate rule for each one. It also handles the missing contester distances without replacing them with made-up values.\nA basic logistic regression would be easier to explain, but I would need to add curved relationships and interactions to let it handle those patterns. A GAM could learn curves for individual features, but interactions would still need extra choices. A single decision tree would be easy to follow, but its predictions can change a lot depending on the training data. Random forests are another reasonable option, since they also combine trees and can learn complex patterns.\nXGBoost was also a practical choice because I had used its recipe/workflow setup in my earlier R work. With the 20-hour limit, I focused on a small comparison I could run and explain. The tradeoff is that hundreds of trees are harder to interpret than a simple regression or one tree, and they can overfit. That is why I checked performance across seasons and included simpler depth-one models. The final comparison tested XGBoost settings, not every model family, so these results do not prove XGBoost is always the best choice.\n\nModel Settings\nI tried six combinations: tree depths of 1, 3, and 5, each with learning rates of 0.01 and 0.1. Depth controls how many levels of questions a tree can ask, and learning rate controls how much each new tree changes the prediction. Each model used 500 trees, 80% of the training rows per tree, and min_n = 10. As a basic comparison, I also predicted the training make rate for every shot. I did not combine models or adjust their probabilities afterward.\n\n\nValidation\nThe training data have two seasons, and the testing data have a different season. I set aside 20% of each training season for a final check, called the audit, using seed 20270927. For the remaining shots, I trained on one season and checked predictions on the other, then switched them. This is two-fold cross-validation grouped by season. The data-preparation steps were learned from the training side each time.\nThis checks whether the model works on a different season. The season labels do not tell me which came first, so I cannot call it a test of future-season performance. There were also no game IDs to split by game."
+  },
+  {
+    "objectID": "projects/project_writeup.html#results",
+    "href": "projects/project_writeup.html#results",
+    "title": "What Makes a Good Shot? Predicting NBA Shot Make Probability",
+    "section": "Results",
+    "text": "Results\nLog Loss: A score for probability predictions. It gives a large penalty when the model is confident but wrong. Lower is better, and I used this score to pick the model.\nBrier Score: The average squared difference between the predicted probability and the result: 1 for a make and 0 for a miss. Lower is better here too.\n\n\n\n\n\n\n\n\nFigure 1: Mean log loss across the two held-out seasons. Lower is better.\n\n\n\n\n\nKey Takeaways: The model with depth 3 and learning rate 0.1 had the lowest average log loss. Deeper trees were not always better. The selected model also beat the simpler depth-one models. Still, the two best settings were close, so the same setting might not win on another season.\n\n\n\nEvaluation\nLog loss\nBrier score\n\n\n\n\nConstant prediction: CV\n0.68966\n0.24826\n\n\nSelected model: CV\n0.62718\n0.22016\n\n\nAudit: repeat check\n0.62880\n0.22087\n\n\n\nThe selected model’s log loss was about 9.1% lower than predicting the same probability for every shot. The table combines all cross-validation shots, while the graph averages the two season scores. This gives slightly different numbers because the seasons have different shot counts.\n\n\nModel Feature Importance\n\n\n\n\n\n\n\n\nFigure 2: The ten features that contributed the most to improving the model’s training predictions, measured by split gain.\n\n\n\n\n\nKey Takeaways: Shot distance had the highest importance, with about 47% of the model’s split gain. Dunk status was next at 16%, followed by first-contester distance at 12%. This suggests that shot location, shot type, and nearby defenders were especially useful to this model. Shooter speed and the shot clock also helped.\nSplit gain measures how much a feature helped improve the model during training. It does not tell me that moving a defender farther away would cause a certain change in shooting percentage. Some features also describe similar things. Distance and court coordinates overlap, for example, so a lower ranking does not automatically mean a feature is unimportant.\n\n\nAre the Probabilities Reasonable?\n\n\n\n\n\n\n\n\nFigure 3: Audit shots viewed in earlier work, grouped by predicted probability. Points near the dashed line show closer agreement with actual make rates. Larger points contain more shots.\n\n\n\n\n\nKey Takeaways: On the audit shots, the model predicted 45.79% would go in, compared with 45.77% that actually did. Most groups are close to the dashed line. That is encouraging, but it does not mean the model gets every type of shot equally right.\nHeaves were one weakness. For 217 shots, the model predicted an average make chance of 15.8%, but only 7.8% went in. The model was too optimistic about these shots. There were not many heaves to judge from, though, and I did not change the model based on this audit result.\n\n\n\nWhat I Tried and Learned\nEarlier work tried a more flexible logistic regression, estimates of player shooting ability, and a different way of fitting XGBoost. For the final version, I used XGBoost with a recipe and workflow. The results here are from that final version. They do not show that every earlier approach was worse.\nOne thing I learned was that small data-cleaning details can matter. R’s automatic column-type guessing could miss the rare fourth-contester distances, so I set the types explicitly. The TRUE/FALSE outcomes and the four distances stored in one column also needed cleaning. Most importantly, a missing defender distance meant there was no defender in that slot, not that I needed to guess a distance."
+  },
+  {
+    "objectID": "projects/project_writeup.html#limitations-and-future-work",
+    "href": "projects/project_writeup.html#limitations-and-future-work",
+    "title": "What Makes a Good Shot? Predicting NBA Shot Make Probability",
+    "section": "Limitations and Future Work",
+    "text": "Limitations and Future Work\nThe model does not know who is shooting. I left player IDs out, so two players with the same shot details would receive the same prediction. In reality, their shooting ability could be very different. The model describes the shot situation, but it can miss an important part of what makes a shot likely to go in.\nIt struggles with some uncommon shots. Heaves are a good example: the model gave them about a 15.8% chance of going in, but only 7.8% were made in the audit. There were just 217 heaves in that group, so there is less evidence to judge them than there is for jumpers or layups. Good overall results can hide errors like this.\nTwo seasons do not tell the whole story. Training on one season and checking the other gives me a useful comparison, but it does not show how the model will perform in every season. There were no game IDs, so I also could not check performance by game. The data leave out attempts where the shooter was fouled, which means this model does not cover all scoring situations.\nWith more time and more data provided for the project, I would focus on:\n\nMore seasons and game information: More seasons, game IDs, and dates would let me test the model on later games and keep shots from the same game together.\nMore details about the shot: Release height, balance, pass quality, and how the shooter got open could help explain differences between otherwise similar shots.\nPlayer ability and rare shots: I would consider testing player shooting estimates based only on training shots, with extra caution for players with few attempts. More heaves would also help check that weak spot.\nChecking the probabilities: If I tried adjusting the probabilities, I would use separate data to fit and test the adjustment, rather than changing them to match audit results I had already seen."
+  },
+  {
+    "objectID": "projects/final_presentation.html#data-overview",
+    "href": "projects/final_presentation.html#data-overview",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Data Overview",
+    "text": "Data Overview\n\n\n\nSources: NFL Big Data Bowl 2025, nflfastR & nflreadr packages\n\n\n\n\nModel Observations: 2022 Passing Plays from Weeks 1-9\n\n\n\n\n\nData Subsets:\n\nGame\nPlay by Play\nPlayer play\nTracking"
+  },
+  {
+    "objectID": "projects/final_presentation.html#no-significant-difference-between-share-of-screen-targets-by-position-direction",
+    "href": "projects/final_presentation.html#no-significant-difference-between-share-of-screen-targets-by-position-direction",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "No Significant Difference Between Share of Screen Targets by Position & Direction",
+    "text": "No Significant Difference Between Share of Screen Targets by Position & Direction"
+  },
+  {
+    "objectID": "projects/final_presentation.html#modeling-approach",
+    "href": "projects/final_presentation.html#modeling-approach",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Modeling Approach",
+    "text": "Modeling Approach\n\n\n\n\n\nMethodology:\n\nCompare LASSO and XGBoost models\n3-Fold Cross Validation\nEvaluation Metrics: Baseline, Kappa, ROC AUC"
+  },
+  {
+    "objectID": "projects/final_presentation.html#model-1-screen-probability",
+    "href": "projects/final_presentation.html#model-1-screen-probability",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Model 1, Screen Probability:",
+    "text": "Model 1, Screen Probability:\nFeature Set Overview:\n\nTeam-Level Historic Tendencies\nPlay Context\nSpatial Positioning"
+  },
+  {
+    "objectID": "projects/final_presentation.html#conditional-probabilities",
+    "href": "projects/final_presentation.html#conditional-probabilities",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Conditional Probabilities:",
+    "text": "Conditional Probabilities:\n\n\nModel 2, Lateral Direction:\n\nModel 3, Receiver Group:"
+  },
+  {
+    "objectID": "projects/final_presentation.html#case-study-application",
+    "href": "projects/final_presentation.html#case-study-application",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Case Study Application",
+    "text": "Case Study Application"
+  },
+  {
+    "objectID": "projects/final_presentation.html#model-predictability-by-team",
+    "href": "projects/final_presentation.html#model-predictability-by-team",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Model Predictability by Team",
+    "text": "Model Predictability by Team\n\nLateral Direction:\n\n\n\nTarget Receiver Group:"
+  },
+  {
+    "objectID": "projects/final_presentation.html#discussion",
+    "href": "projects/final_presentation.html#discussion",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Discussion",
+    "text": "Discussion\nXGBoost/LASSO hierarchical modeling framework to predict screen pass tendencies for coach-usable insights\n\n\n\nLimitation:\n\nSparse number of single-season screen plays per team\n\nFuture Work:\n\nSequential models for continuous pre-snap probability\nFind individual teams’ pre-snap “tells”"
+  },
+  {
+    "objectID": "projects/final_presentation.html#acknowledgements",
+    "href": "projects/final_presentation.html#acknowledgements",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nSpecial thanks to Karim Kassam, Erin Franke, Sara Colando, Dr. Ron Yurko, Quang Nguyen, and the CMSACamp TAs for their guidance throughout our study."
+  },
+  {
+    "objectID": "projects/final_presentation.html#appendix",
+    "href": "projects/final_presentation.html#appendix",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Appendix",
+    "text": "Appendix\nLateral Distance Model VIP:"
+  },
+  {
+    "objectID": "projects/final_presentation.html#appendix-continued",
+    "href": "projects/final_presentation.html#appendix-continued",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Appendix Continued",
+    "text": "Appendix Continued\n\nReceiver Group Model VIP:\n\n\n\nScreen Model VIP:"
+  },
+  {
+    "objectID": "projects/cmsac_report.html",
+    "href": "projects/cmsac_report.html",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "",
+    "text": "View the final presentation"
+  },
+  {
+    "objectID": "projects/cmsac_report.html#introduction",
+    "href": "projects/cmsac_report.html#introduction",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Introduction",
+    "text": "Introduction\nThink fast! The secret sauce behind the NFL’s screen play is the element of surprise. The play involves the quarterback quickly releasing the ball to a receiver close to the line of scrimmage, with nearby teammates swooping in to block incoming defenders and propel the ball forward. We can see its effectiveness in this play by the Los Angeles Rams in 2022, with Matthew Stafford swiftly delivering the ball to a well-protected Cooper Kupp.\n\nFigure 1. 2022 Week 6 LA vs. CAR screen pass from M. Stafford to C. Kupp \nWhile the screen play is designed to be a reliable and consistent play, its success depends heavily on surprise. If defenders recognize the play before or immediately after the snap, they can quickly target the intended receiver and limit yardage. Take a look at this play by the New York Giants in 2024:\n\nFigure 2. 2024 Week 1 MIN vs. NY screen pass from D. Jones intercepted for a Pick 6 \nTouchdown! …Vikings??\nLinebacker Andrew Ginkel acted on his screen play suspicions by not fully pressuring his offensive lineman, which set up a beautifully executed interception. Accurately predicting screen plays before the snap is an invaluable defensive skill to halt drives, and knowing the offense’s side of attack and likely receiver adds an even clearer picture for the defense to capitalize on. \nThis paper aims to create a framework to consistently identify high-likelihood screen plays, while also revealing key details on an offense’s pre-planned structures. Using only pre-snap information, we can determine the cues defenses can use to anticipate an offense’s intentions and highlight the NFL teams whose screen play tendencies are the easiest to predict."
+  },
+  {
+    "objectID": "projects/cmsac_report.html#data",
+    "href": "projects/cmsac_report.html#data",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Data",
+    "text": "Data\nOur primary data source is from the 2025 NFL Big Data Bowl1, which provides tracking and event level data up to week 9 of the 2022 NFL season.\nHere is an overview of each type of data provided:\n\nGames: Each observation represents information on an NFL game, which includes the team involved, the outcome and final score, and the exact date\nPlayers: Each observation represents a rostered player and includes their main position over the season\nPlay by Play: Each observation describes a play’s context and outcome, including the quarter, down, yards to go, and formations.\nPlayer Play: Each observation describes a player’s role throughout a play, such as whether they were in motion before the snap, attempted or executed a sack, and the route they ran.\nTracking: Each observation represents a single player at one frame in time, including the player’s x- and y-coordinates, speed, orientation, and direction. This animation illustrates the frame-by-frame (10 hz) positioning of all 22 players from pre-snap huddle to the end of the play:\n\nFigure 3. Player-tracking screen play from 2022 Week 6 LA vs. CAR\n\nPlayers without clearly recorded pre-snap motion (NAs) on certain plays were assumed to have none. We also used the nflfastR and nflreadr packages, which contain more detailed play by play data dating back to 1999, to extract additional features (e.g., number of defenders in the box), and to explore historical team offensive and defensive tendencies (as seen in Figure 4)."
+  },
+  {
+    "objectID": "projects/cmsac_report.html#exploratory-data-analysis",
+    "href": "projects/cmsac_report.html#exploratory-data-analysis",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Exploratory Data Analysis",
+    "text": "Exploratory Data Analysis\nTo get a better understanding of variable interactions and how they relate to our motivations, we explored a variety of features within the data. Identifying these relationships helped us gain of sense of the state of the NFL at the time, team strategies, and teams use their players.\n\n\n Figure 4. Team screen play percentage across seasons\n\nUsing supplementary data from nflfastR and nflreadr, we plotted screen usage trends between teams from 2020 to 2022. The gap between top and bottom teams show a consistent difference throughout the seasons differing by 5-10%. Additionally, the set of teams from each season are different but we find patterns of similar teams within multiple years. For example, the Arizona Cardinals is the top team and the Baltimore Ravens is among the bottom from 2020 to 2021. Since teams have varying preferences for using screens, it is important to consider the possession team’s tendencies within our model. Taking this into account, any historical probabilities we feature engineer moving forward to predict screen plays occurring will comprise of the previous two years (2020-21) leading up to 2022.\n\n\nFigure 5. Receiver Group Target Share Based on Lateral Direction of a Screen Play\n\nThis contingency table shows the target share between receiver groups on the lateral direction of screen plays. Since the p value is greater then 0.05 we can assume that there is no significant difference between the direction of the screen play and which receiver group will be targeted."
+  },
+  {
+    "objectID": "projects/cmsac_report.html#methodology",
+    "href": "projects/cmsac_report.html#methodology",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Methodology",
+    "text": "Methodology\nFor our methodology we decided on a two-stage hierarchical modeling framework:\n\n\n\n\n\n\nflowchart TD\n    A[\"Model 1: Screen Probability&lt;br&gt;Screen or not\"] --&gt; B[\"Model 2: Lateral Direction&lt;br&gt;Left or right\"]\n    A --&gt; C[\"Model 3: Target Group&lt;br&gt;RB/TE or WR\"]\n    \n    classDef indianred fill:#CD5B45,color:#ffffff,stroke:#8B3A2B;\n    class A,B,C indianred\n\n\n\n\n\n\n\nAcross all three models, we applied a common set of filters to remove plays where the offense’s original intent was compromised or the play didn’t count toward a clean result: we excluded QB kneels, QB spikes, and any play nullified by penalty. We also excluded plays beyond the 95th percentile of time-to-throw, to remove scrambles or improvised plays where the original goal of the play had been lost, and excluded all plays run by the Miami Dolphins, since their starting quarterback, Tua Tagovailoa, is left-handed, which could introduce bias into our spatial features.\nFor the screen probability model, we began with all passing plays, giving us a dataset of about 8,682 plays. After applying the filters above, 6,199 passing plays remained for training/testing the screen probability model.\nThe lateral direction model and the receiver group model were trained/tested on a further-filtered dataset of screen plays only, where we classified a play as a screen pass if the targeted receiver ran a screen route. Applying the same filters described above, 818 total screen plays were identified, and after the additional exclusions, 755 screen plays remained for training/testing the lateral direction and receiver group models.\nFor each model, we developed both an XGBoost model and a LASSO logistic model. XGBoost consistently produced more accurate predictions due to the presence of many non-linear relationships and interaction effects among our pre-snap spatial features, patterns that LASSO’s linear structure could not capture as effectively.\nWe also considered generalized additive models (GAMs) and mixed-effects models as alternatives, but each under-performed relative to our chosen approaches. GAMs can capture non-linear patterns in individual features, but aren’t as good at capturing how multiple features interact with each other, which XGBoost handles automatically. Mixed-effects models, which we considered for incorporating team as a random effect, were constrained by the limited number of observations per team (as few as 9 screen plays for some teams), which is insufficient to reliably estimate team-level variance components and risks unstable or overfit random-effect estimates.\nFeatures in all three models use pre-snap features only. Each model considered key overarching themes of game context, situation factors, team formations, historic tendencies, and spatial factors.\n\nModel Feature Sets\n\nScreen ProbabilityLateral DirectionTarget Receiver Group\n\n\n\nXGBoost Feature SetScreen probability Model Importance\n\n\nModel 1’s feature set focused on team tendencies, spatial positioning, play context, and personnel information. Through EDA, offensive and defensive strategies varied across teams and seasons, so we engineered team-level situation tendency variables such as historical screen and coverage type rates using the supplementary data from 2020-21. Additionally, due to the sequential nature of the game, we attempted to capture some of its effects by creating a previous play type (run or pass) lag variable. The spatial positioning of defensive and offensive players were generated using tracking data at the snap of the play and measured lateral distance, depth and body orientation of players from the football. Finally, personnel information consists of offensive and defensive groupings and formations that capture the structure of the players on field.\n\n\n\n\n\n\n\n\n\n\nXGBoost Feature SetLateral Direction Model Importance\n\n\nPre-snap features for this model were chosen to anticipate what side of the field an offense is likely to attack. Formation numbers matter, a difference in eligible receiver count, for instance, reflects the simple logic that offenses tend to direct plays toward the side with more blockers and receivers. Spacing offers a similar signal, as how wide the field gets towards one side or another can be a big tell as to where the offense is planning to go. Alignment cues add a more direct tell, running back lateral position at the snap is one example, as backs are frequently positioned toward the side they’re expected to work to.\n\n*Features isolated for use in LASSO model\n\n\n\n\n\n\n\n\n\nXGBoost Feature SetReceiver group Model Importance\n\n\nFor Model 3 (predicting target receiver group), game context features such as down and yards to go contributed minimally to predictive performance. This reflects how screen plays are designed: the receiving target is primarily a product of blocker positioning and spacing, not the target’s individual skill or the game situation. This motivated the implementation of spatial features, such as each receiver’s distance to nearby defenders, offensive linemen, and other receivers, to capture the non-linear, interconnected relationships that help identify potential targets with well-positioned blockers. Tracking data further allowed us to include each receiver’s depth and horizontal distance relative to the football at the snap, which helped distinguish spaced-out wide receivers from shotgun-aligned running backs or blocking tight ends who are unlikely to be the intended target."
+  },
+  {
+    "objectID": "projects/cmsac_report.html#results",
+    "href": "projects/cmsac_report.html#results",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Results",
+    "text": "Results\nWe evaluated our models using 3-fold cross-validation, with folds defined by week ranges (Weeks 1–3, 4–6, and 7–9). For each fold, the corresponding weeks served as the test set while the model trained on the remaining weeks, preserving separation to prevent data leakage and maintain data integrity.\nBefore getting into model evaluation these are the diagnostics we’re using\nBaseline: Accuracy achievable by simply guessing the most frequent class every time, without using any model or features.\nAccuracy: Proportion of predictions the model got correct out of all predictions made.\nCohen’s kappa: Measures how much better the model performs than random chance, adjusting for the class distribution. It ranges from -1 to 1, where 0 indicates performance no better than chance and 1 indicates perfect agreement. Kappa is especially useful here because it accounts for class imbalance in a way raw accuracy does not; a model can have high accuracy but low Kappa if it’s simply exploiting an imbalanced baseline rather than learning meaningful patterns.\n\n\\kappa = \\frac{p_o - p_e}{1 - p_e}\n where p_o is the observed accuracy and p_e is the expected accuracy under random chance, based on the class distribution.\nROC AUC: Measures the model’s ability to distinguish between classes across all possible classification thresholds, rather than at a single fixed cutoff. It ranges from 0.5 (no better than random guessing) to 1.0 (perfect separation between classes). Unlike accuracy, ROC AUC is threshold-independent and reflects the model’s ability to rank positive cases above negative ones.\n\n\\text{AUC} = P(\\text{score}(x^+) &gt; \\text{score}(x^-))\n where x^+ and x^- are a randomly chosen positive and negative observation, respectively.\n\nScreen ProbabilityLateral DirectionTarget Receiver Group\n\n\n\n\n\nNaive Guess Rate/Baseline = 12.1%\nThe XGBoost model outperformed the LASSO model across all three evaluation metrics. Due to the severe class imbalance inherent in screen pass detection, which occurs around 12% of the time, relying on overall accuracy can be misleading, making metrics like the F1-Score and Cohen’s Kappa statistic more informative for evaluation. Our XGBoost model achieved the highest F1-Score of 0.325, implying it performs better than the LASSO model at identifying the minority class. Furthermore, it achieved the highest Kappa score of 0.268, indicating that the model captures 26.8% of the maximum possible performance beyond chance agreement.\n\n\n\n\n\nNaive Guess Rate/Baseline = 51.6%\nThe LASSO logistic model was selected for the lateral direction task despite XGBoost’s modest edge in raw performance, as the two models perform closely enough that interpretability becomes the deciding factor. With a baseline of 51.6% (the majority-direction guess rate for screen plays), XGBoost improves accuracy by roughly 18.7 percentage points, while LASSO improves it by roughly 16.8 percentage points — a gap of less than 2 points. Kappa values of 0.406 for XGBoost and 0.364 for LASSO confirm that both models are learning genuine patterns from pre-snap alignment rather than exploiting class imbalance, and both rank a randomly selected left-direction play above a randomly selected right-direction play correctly roughly 75% of the time (ROC AUC of 0.758 and 0.747, respectively). Given this near-equivalent performance, we favor LASSO’s three-feature simplicity (difference in eligible receiver count, split asymmetry, and RB lateral position relative to football) over XGBoost’s added complexity, since it allows coaches and players to understand and act on the model’s reasoning in real time, rather than treating it as a black box.\n\n\n\n\n\nNaive Guess Rate/Baseline = 50.3%\nThe XGBoost model was selected as it significantly outperformed the LASSO across all three week-based folds, reflecting the non-linear relationships of spatial features, such as each receiver’s lateral distance from the football, and the predicted receiver group. With a baseline of roughly 50% (an even split between WR and non-WR target share on screen plays), our model does 18% better than simply assuming the ball is going to a WR. The model is not exploiting class imbalances to inflate accuracy, reflected by a robust Kappa of 0.366. It also correctly ranks randomly selected WR-targeted plays above randomly selected non-WR-targeted plays roughly 75% of the time. Taken together, these metrics indicate the XGBoost model has learned meaningful patterns from pre-snap alignments, making it a valuable tool to predict the targeted position group.\n\n\n\n\nCase Study\n\n\n\nIn this 3rd and 13 situation for the Rams, our model framework demonstrated its capability of evaluating a play using pre-snap features driven by play context and spatial positioning. Model 1 highlights a strong screen probability of 58.9%. Model 2 then predicts the screen is 62.9% likely to go to the right, and Model 3 anticipates a 55.8% chance that the targeted reciever group are the WRs. This application illustrates how coaches can isolate high-probability screen plays when prepping for future games.\n\n\nLOTO Model\nFor the Leave-One-Team-Out (LOTO) models, we trained on all screen passes excluding a given team, then evaluated on that team’s plays as the held-out test set. This procedure was repeated across all teams to produce team-specific performance results.\n\nLateral Direction - LASSOReceiver Group - XGBoost\n\n\n\n\n\nThese results suggest that certain teams are more “predictable” than others, though the analysis is limited by relatively small sample sizes at the team level. Predictability is also inherently bounded by the feature set: since this evaluation uses a LASSO model with only three features, eligible receiver count differential, split asymmetry, and running back lateral position relative to the ball at snap, the model is limited to whatever signal those three variables can capture. For example, when the Eagles show a clear imbalance across these features, they tend to favor that direction the majority of the time, improving prediction accuracy by 33% over simply guessing their most common direction. By contrast, applying the same approach to the Falcons performs over 4% worse than picking their most frequent direction, illustrating the variation in predictability across teams.\n\n\n\n\n\nA similar spread is found when analyzing each team’s predictability for targeting a position group with the XGBoost model. New England and Arizona posted notably high Kappa scores, which help rule out class imbalance as a driver of their elevated accuracy. Feature-level analysis suggests that defender distance and the receiver’s horizontal and lateral distance from the football are most responsible for these two teams’ high predictability. However, these spatial features are more difficult to interpret and isolate actionable “tells” for the defense, which is grounds for future work."
+  },
+  {
+    "objectID": "projects/cmsac_report.html#discussion",
+    "href": "projects/cmsac_report.html#discussion",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Discussion",
+    "text": "Discussion\nBy developing an XGBoost and LASSO modeling framework to predict screen pass decisions using pre-snap features, we are able to predict the direction of a screen play 19% better than naive guessing, and the targeted receiver group 18% better. We also crafted team-level metrics for predictability in screen direction and targeted receiver group, helping identify which teams’ screen tendencies are most tied to interpretable model features. This is especially valuable heading into the playoffs, when a full season of data would provide the most accurate picture of an opponent’s screen tendencies."
+  },
+  {
+    "objectID": "projects/cmsac_report.html#limitations",
+    "href": "projects/cmsac_report.html#limitations",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Limitations",
+    "text": "Limitations\nOur primary limitation is data availability: our models were trained and tested exclusively on Weeks 1-9 of the 2022 NFL season. Our current estimates of each team’s screen predictability would benefit from a full season of tracking data, as the present sample includes a relatively small number of screen plays per team. Additionally, our models may not fully capture how a defense’s pre-snap look influences an offense’s decision to run a screen. For instance, an inferred coverage feature could meaningfully improve prediction but is not included here. Finally, because offensive strategy is tied to annual roster turnover, our framework’s generalizability is largely confined to the season in which it is trained and applied.\n\nFuture Work\nLooking ahead, we would like to incorporate sequential models that estimate the likelihood of a screen, along with its direction and target position group, as a continuous probability from the offensive huddle through the snap. This would allow us to identify which pre-snap spatial movements are “tells” for a screen, offering an interpretable and valuable signal for NFL defenses. With continued work, we believe our screen-prediction models and team-level predictability metrics can serve as informative tools to help defenses anticipate, disguise against, and neutralize the screen pass."
+  },
+  {
+    "objectID": "projects/cmsac_report.html#acknowledgements",
+    "href": "projects/cmsac_report.html#acknowledgements",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis project would not have been possible without the help of Dr. Karim Kassam at Teamworks, whom helped assist and mentor our research process.\nWe also want to thank Erin Franke, Sara Colando, Dr. Ron Yurko and the CMSACamp TAs for their guidance as well as Quang Nguyen for distributing the data resources needed to conduct our study."
+  },
+  {
+    "objectID": "projects/cmsac_report.html#contact-information",
+    "href": "projects/cmsac_report.html#contact-information",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Contact Information",
+    "text": "Contact Information\nKrish Bothra, University of Wisconsin-Madison, krishbothra3@gmail.com, krishbothra.github.io\nEthan Larimore, Rice University, elarimore16@gmail.com, elarimore.github.io\nJenna Lau, University of Texas at Austin, jennaaa.wl@gmail.com, jennaxlauu.github.io"
+  },
+  {
+    "objectID": "projects/cmsac_report.html#footnotes",
+    "href": "projects/cmsac_report.html#footnotes",
+    "title": "Screen Machine: Pre-Snap Play Prediction in the NFL",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n“NFL Big Data Bowl 2025: Overview.” Kaggle, 2024, www.kaggle.com/competitions/nfl-big-data-bowl-2025/overview.↩︎"
+  },
+  {
+    "objectID": "projects/abs-challenge-report.html",
+    "href": "projects/abs-challenge-report.html",
+    "title": "ABS Challenge Likelihood",
+    "section": "",
+    "text": "Challenge it or let it go? Every close pitch forces that choice, and the secret sauce behind a good ABS challenge is knowing the difference between a call that looks wrong and a call that is actually wrong. A player might disagree with the umpire without ever asking for a review, and even a challenge that does get requested is no guarantee the call gets flipped.\nThat makes three different questions: Will the pitch be challenged? Which team will challenge it? And will the challenge succeed? This paper aims to treat them separately. Using only information available after the umpire’s original call, I can estimate the probability of each outcome and show how much of that signal comes from where the pitch crossed the plate."
+  },
+  {
+    "objectID": "projects/abs-challenge-report.html#introduction",
+    "href": "projects/abs-challenge-report.html#introduction",
+    "title": "ABS Challenge Likelihood",
+    "section": "",
+    "text": "Challenge it or let it go? Every close pitch forces that choice, and the secret sauce behind a good ABS challenge is knowing the difference between a call that looks wrong and a call that is actually wrong. A player might disagree with the umpire without ever asking for a review, and even a challenge that does get requested is no guarantee the call gets flipped.\nThat makes three different questions: Will the pitch be challenged? Which team will challenge it? And will the challenge succeed? This paper aims to treat them separately. Using only information available after the umpire’s original call, I can estimate the probability of each outcome and show how much of that signal comes from where the pitch crossed the plate."
+  },
+  {
+    "objectID": "projects/abs-challenge-report.html#data",
+    "href": "projects/abs-challenge-report.html#data",
+    "title": "ABS Challenge Likelihood",
+    "section": "Data",
+    "text": "Data\nThe training data covers 309,063 called pitches across 2,008 games. Challenges are rare, showing up on only about 2.7% of those pitches, which makes predicting them a highly imbalanced problem. Of the pitches that were challenged, about 49% were overturned, which is close to a coin flip.\nBefore building anything, I checked pitch identifiers, missing values, and whether the outcome fields agreed with each other. One detail matters here: a missing success label on an unchallenged pitch means the outcome is unknown, not that a challenge failed. Those pitches help train the challenge-likelihood model, but they are left out of the success and challenging-team models. The workbook also labels the success field is_success, while the assignment text calls it is_successful.\nMissing numeric values were filled with medians from the fitting data, and I added indicators to flag which measurements were missing. Categorical predictors got a fallback level for any category the model had not seen before."
+  },
+  {
+    "objectID": "projects/abs-challenge-report.html#methodology",
+    "href": "projects/abs-challenge-report.html#methodology",
+    "title": "ABS Challenge Likelihood",
+    "section": "Methodology",
+    "text": "Methodology\nI settled on three separate models in R, one for each question:\n\n\n\n\n\n\n\n\nTask\nTraining population\nOutput\n\n\n\n\nAny challenge\nAll labeled pitches\np_challenge\n\n\nChallenging team\nChallenged pitches\nchallenge_source\n\n\nOverturn if challenged\nChallenged pitches with observed outcomes\np_success_g_challenge\n\n\n\nEvery model predicts at the same moment: after the umpire’s original call, but before any challenge. That makes the original ball-or-strike call a fair predictor. One catch is that the challenging-team model cannot tell whether a catcher or a pitcher started a defensive challenge, since the labels only identify the team.\nGames were split into roughly 60% fitting, 20% tuning, and 20% evaluation groups, with the coaching-report game held out separately. Splitting by game keeps pitches from the same game on one side only. Since the supplied fields do not include dates, this tests how well the models handle new games, not how they would hold up in a future season.\nFor each target, I compared a constant-probability baseline, ridge logistic regression, and XGBoost. The challenging-team task also had a simple baseline built on the original call. Ridge penalties, tree depth, and boosting iterations were picked using tuning-set log loss, and XGBoost came out on top for all three targets. Each selected configuration was then refit on all labeled observations for its task to produce 34,972 test predictions.\n\nModel Feature Sets\nThe model draws on count, inning, score, pitch sequence, velocity, movement, extension, handedness, and catcher, umpire, and venue information. It also includes the original umpire call, along with indicators for two strikes, three balls, and a potential strike-three or ball-four call.\nPitch location took the most trial and error. I started with precise pitch coordinates and a buffer around the strike zone to approximate uncertainty in how players judge a pitch. However, I felt this still gave the model a level of spatial precision that players would struggle to match. I therefore experimented with a simpler location feature that distinguishes obvious calls from pitches closer to the boundary.\nThe current version uses four categories: obvious strike, obvious ball, borderline, and unknown. An obvious strike requires the entire ball to clear every supplied zone edge inward by at least four inches. An obvious ball requires the same clearance outside at least one edge. With a 1.5-inch ball radius, this means 5.5 inches of clearance from the ball’s center. All other valid locations are borderline, while missing or invalid locations are unknown."
+  },
+  {
+    "objectID": "projects/abs-challenge-report.html#results",
+    "href": "projects/abs-challenge-report.html#results",
+    "title": "ABS Challenge Likelihood",
+    "section": "Results",
+    "text": "Results\nBefore getting into model evaluation, these are the diagnostics I am using:\n\nBaseline: The log loss from predicting one constant probability for every pitch, without using any features.\nLog loss: The primary metric, since my objective is to produce useful probabilities. It punishes confident predictions that turn out wrong, and lower is better.\nBrier score: The average squared gap between each predicted probability and what actually happened. Lower is better here too.\nCalibration plots: A check on whether predicted probabilities match how often the outcome really occurs.\n\nAccuracy alone would be misleading. Predicting “no challenge” on every pitch would already be right most of the time.\n\n\n\n\nTable 1: Current model vs. constant baseline on the evaluation games. Scores are separate binary-task log losses, not official test-set scores.\n\n\n\n\n\n\nTask\nBaseline\nCurrent\n\n\n\n\nChallenge likelihood\n0.12183\n0.09995\n\n\nOverturn if challenged\n0.69294\n0.67681\n\n\nChallenging team\n0.69264\n0.01749\n\n\n\n\n\n\n\n\nThe current challenge model beat its constant baseline by about 18%. The overturn model showed only a small improvement.\n\n\n\n\n\n\n\n\nFigure 1: Cutting precise location hurt challenge prediction and hit overturn prediction the hardest. These exploratory experiments reused the same evaluation games, and each panel has its own scale. Lower is better.\n\n\n\n\n\nThe feature experiments exposed a real tradeoff. With the original detailed location features, overturn log loss was 0.28464. Once that information was removed, performance dropped substantially. So the current simplified model is not the strongest version I tested. What it does show is how much of a successful challenge comes down to precise pitch location.\nChallenging-team prediction stayed strong in every experiment, and the reason is simple: the original call points straight to the team that would benefit from a reversal. That makes it a much easier task than predicting whether a challenge happens or succeeds.\n\n\n\n\n\n\n\n\nFigure 2: Top ten features in the final refitted challenge model. Values are shares of tree-split gain, with categorical levels and missing indicators grouped together. They are not prediction probabilities or causal effects.\n\n\n\n\n\nThe coarse location category accounts for roughly 66% of the challenge model’s split gain, so the trees lean on it heavily. Since split gain says nothing about direction, it does not reveal whether a given category raises or lowers a pitch’s challenge probability. Correlated predictors can also split importance among themselves."
+  },
+  {
+    "objectID": "projects/abs-challenge-report.html#limitations-future-work",
+    "href": "projects/abs-challenge-report.html#limitations-future-work",
+    "title": "ABS Challenge Likelihood",
+    "section": "Limitations & Future Work",
+    "text": "Limitations & Future Work\nA key limitation of the data is the absence of information on how individual umpires call their specific strike zones. The model includes the identity of the umpire behind the plate, but it has no information on the shape of that umpire’s zone. Umpires do not all call the edges the same way, and a pitch on the border of the zone may be a routine strike for one umpire and a ball for another.\nWith access to this data, I could build location features that describe where a pitch crossed the plate relative to the zone, such as whether it was high, low, or to a particular side. I could then compare those locations against how each umpire tends to call them. A pitch that is borderline in the strict sense may be a safe call in one part of the zone for a given umpire and a likely miss in another. Depending on how an umpire calls their strike zone, these tendencies could have a substantial impact on how a player decides whether to challenge.\nThe number of baserunners and their locations on the bases would also be valuable to include. These factors change how likely a team is to challenge a pitch in order to keep the at-bat going. A strike three or ball four with runners on base carries very different stakes than the same call with the bases empty, and a team with a runner in scoring position has more to gain from extending the at-bat. Challenge decisions are strategic, and the current model has no view of the base state to reflect that.\nTogether, umpire zone tendencies and base states would give the model a closer view of the situation a player faces when deciding whether to challenge, and could improve both challenge likelihood and overturn predictions."
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#motivating-example-la-vs.-car",
+    "href": "projects/CMSAC_Pres.html#motivating-example-la-vs.-car",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Motivating Example: LA vs. CAR",
+    "text": "Motivating Example: LA vs. CAR"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#data-overview",
+    "href": "projects/CMSAC_Pres.html#data-overview",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Data Overview",
+    "text": "Data Overview\n\n\n\nSources: NFL Big Data Bowl 2025, nflfastR & nflreadr packages\n\n\n\n\nModel Observations: 2022 Passing Plays from Weeks 1-9\n\n\n\n\nData Subsets:\n\nGame\nPlay by Play\nPlayer play\nTracking"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#no-significant-difference-between-share-of-screen-targets-by-position-direction",
+    "href": "projects/CMSAC_Pres.html#no-significant-difference-between-share-of-screen-targets-by-position-direction",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "No Significant Difference Between Share of Screen Targets by Position & Direction",
+    "text": "No Significant Difference Between Share of Screen Targets by Position & Direction"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#modeling-approach",
+    "href": "projects/CMSAC_Pres.html#modeling-approach",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Modeling Approach",
+    "text": "Modeling Approach\n\nMethodology:\n\nCompare LASSO and XGBoost models\n3-Fold Cross Validation\nEvaluation Metrics: Baseline, Kappa, ROC AUC"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#model-1-screen-probability",
+    "href": "projects/CMSAC_Pres.html#model-1-screen-probability",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Model 1, Screen Probability:",
+    "text": "Model 1, Screen Probability:\nFeature Set Overview:\n\nTeam-Level Historic Tendencies\nPlay Context\nSpatial Positioning"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#conditional-probabilities",
+    "href": "projects/CMSAC_Pres.html#conditional-probabilities",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Conditional Probabilities:",
+    "text": "Conditional Probabilities:\n\n\nModel 2, Lateral Direction:\n\nModel 3, Receiver Group:"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#case-study-application",
+    "href": "projects/CMSAC_Pres.html#case-study-application",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Case Study Application",
+    "text": "Case Study Application"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#model-predictability-by-team",
+    "href": "projects/CMSAC_Pres.html#model-predictability-by-team",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Model Predictability by Team",
+    "text": "Model Predictability by Team\n\nLateral Direction:\n\n\nTarget Receiver Group:"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#discussion",
+    "href": "projects/CMSAC_Pres.html#discussion",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Discussion",
+    "text": "Discussion\nXGBoost/LASSO hierarchical modeling framework to predict screen pass tendencies for coach-usable insights\n\n\n\nLimitation:\n\nSparse number of single-season screen plays per team\n\nFuture Work:\n\nSequential models for continuous pre-snap probability\nFind individual teams’ pre-snap “tells”"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#acknowledgements",
+    "href": "projects/CMSAC_Pres.html#acknowledgements",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nSpecial thanks to Karim Kassam, Erin Franke, Sara Colando, Dr. Ron Yurko, Quang Nguyen, and the CMSACamp TAs for their guidance throughout our study."
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#appendix",
+    "href": "projects/CMSAC_Pres.html#appendix",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Appendix",
+    "text": "Appendix\nLateral Distance Model VIP:"
+  },
+  {
+    "objectID": "projects/CMSAC_Pres.html#appendix-continued",
+    "href": "projects/CMSAC_Pres.html#appendix-continued",
+    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "section": "Appendix Continued",
+    "text": "Appendix Continued\n\nReceiver Group Model VIP:\n\n\nScreen Model VIP:"
   }
 ]

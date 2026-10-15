@@ -3,7 +3,7 @@ description: "An ensemble of XGBoost and logistic regression models predicting N
 order: 6
 title: "March Madness Bracket Predictor"
 date: 2025-03-01
-categories: [R, XGBoost, tidyverse]
+categories: [NCAAB, Basketball]
 ---
 
 ## Overview
