@@ -1,6 +1,6 @@
 ---
 title: "Screen Machine:<br>Pre-Snap Play Prediction in the NFL"
-subtitle: "External Advisor: Dr. Karim Kassam, Teamworks"
+subtitle: "External Advisor: Dr. Karim Kassam"
 author: "Krish Bothra, Ethan Larimore, Jenna Lau"
 format: 
   revealjs:
@@ -26,10 +26,10 @@ editor: visual
 ::: {.column width="50%"}
 ### Data Subsets:
 
--   Game
--   Play by Play
--   Player play
--   Tracking
+- Game
+- Play by Play
+- Player play
+- Tracking
 :::
 
 ::: {.column width="50%"}
@@ -46,17 +46,17 @@ editor: visual
 
 **Methodology:**
 
--   Compare LASSO and XGBoost models
--   3-Fold Cross Validation
--   Evaluation Metrics: Baseline, Kappa, ROC AUC
+- Compare LASSO and XGBoost models
+- 3-Fold Cross Validation
+- Evaluation Metrics: Baseline, Kappa, ROC AUC
 
 ## Model 1, Screen Probability:
 
 **Feature Set Overview:**
 
--   Team-Level Historic Tendencies
--   Play Context
--   Spatial Positioning
+- Team-Level Historic Tendencies
+- Play Context
+- Spatial Positioning
 
 ![](Images/report/model_results_table-02.png)
 
@@ -111,13 +111,13 @@ XGBoost/LASSO hierarchical modeling framework to predict screen pass tendencies 
 
 **Limitation:**
 
--   Sparse number of single-season screen plays per team
+- Sparse number of single-season screen plays per team
 
 **Future Work:**
 
--   Sequential models for continuous pre-snap probability
+- Sequential models for continuous pre-snap probability
 
--   Find individual teams’ pre-snap “tells”
+- Find individual teams’ pre-snap “tells”
 
 ## Acknowledgements
 
@@ -125,11 +125,9 @@ Special thanks to Karim Kassam, Erin Franke, Sara Colando, Dr. Ron Yurko, Quang 
 
 ## Appendix
 
-
 Lateral Distance Model VIP:
 
 ![](Images/report/variable_importance.jpg){fig-align="center"}
-
 
 ## Appendix Continued
 
