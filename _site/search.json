@@ -177,84 +177,84 @@
   {
     "objectID": "CMSAC_Pres.html#motivating-example-la-vs.-car",
     "href": "CMSAC_Pres.html#motivating-example-la-vs.-car",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Motivating Example: LA vs. CAR",
     "text": "Motivating Example: LA vs. CAR"
   },
   {
     "objectID": "CMSAC_Pres.html#data-overview",
     "href": "CMSAC_Pres.html#data-overview",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Data Overview",
     "text": "Data Overview\n\n\n\nSources: NFL Big Data Bowl 2025, nflfastR & nflreadr packages\n\n\n\n\nModel Observations: 2022 Passing Plays from Weeks 1-9\n\n\n\n\nData Subsets:\n\nGame\nPlay by Play\nPlayer play\nTracking"
   },
   {
     "objectID": "CMSAC_Pres.html#no-significant-difference-between-share-of-screen-targets-by-position-direction",
     "href": "CMSAC_Pres.html#no-significant-difference-between-share-of-screen-targets-by-position-direction",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "No Significant Difference Between Share of Screen Targets by Position & Direction",
     "text": "No Significant Difference Between Share of Screen Targets by Position & Direction"
   },
   {
     "objectID": "CMSAC_Pres.html#modeling-approach",
     "href": "CMSAC_Pres.html#modeling-approach",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Modeling Approach",
     "text": "Modeling Approach\n\nMethodology:\n\nCompare LASSO and XGBoost models\n3-Fold Cross Validation\nEvaluation Metrics: Baseline, Kappa, ROC AUC"
   },
   {
     "objectID": "CMSAC_Pres.html#model-1-screen-probability",
     "href": "CMSAC_Pres.html#model-1-screen-probability",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Model 1, Screen Probability:",
     "text": "Model 1, Screen Probability:\nFeature Set Overview:\n\nTeam-Level Historic Tendencies\nPlay Context\nSpatial Positioning"
   },
   {
     "objectID": "CMSAC_Pres.html#conditional-probabilities",
     "href": "CMSAC_Pres.html#conditional-probabilities",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Conditional Probabilities:",
     "text": "Conditional Probabilities:\n\n\nModel 2, Lateral Direction:\n\nModel 3, Receiver Group:"
   },
   {
     "objectID": "CMSAC_Pres.html#case-study-application",
     "href": "CMSAC_Pres.html#case-study-application",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Case Study Application",
     "text": "Case Study Application"
   },
   {
     "objectID": "CMSAC_Pres.html#model-predictability-by-team",
     "href": "CMSAC_Pres.html#model-predictability-by-team",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Model Predictability by Team",
     "text": "Model Predictability by Team\n\nLateral Direction:\n\n\nTarget Receiver Group:"
   },
   {
     "objectID": "CMSAC_Pres.html#discussion",
     "href": "CMSAC_Pres.html#discussion",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Discussion",
     "text": "Discussion\nXGBoost/LASSO hierarchical modeling framework to predict screen pass tendencies for coach-usable insights\n\n\n\nLimitation:\n\nSparse number of single-season screen plays per team\n\nFuture Work:\n\nSequential models for continuous pre-snap probability\nFind individual teams’ pre-snap “tells”"
   },
   {
     "objectID": "CMSAC_Pres.html#acknowledgements",
     "href": "CMSAC_Pres.html#acknowledgements",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Acknowledgements",
     "text": "Acknowledgements\nSpecial thanks to Karim Kassam, Erin Franke, Sara Colando, Dr. Ron Yurko, Quang Nguyen, and the CMSACamp TAs for their guidance throughout our study."
   },
   {
     "objectID": "CMSAC_Pres.html#appendix",
     "href": "CMSAC_Pres.html#appendix",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Appendix",
     "text": "Appendix\nLateral Distance Model VIP:"
   },
   {
     "objectID": "CMSAC_Pres.html#appendix-continued",
     "href": "CMSAC_Pres.html#appendix-continued",
-    "title": "Screen Machine:Pre-Snap Play Prediction in the NFL",
+    "title": "Screen Time:Pre-Snap Play Prediction in the NFL",
     "section": "Appendix Continued",
     "text": "Appendix Continued\n\nReceiver Group Model VIP:\n\n\nScreen Model VIP:"
   },

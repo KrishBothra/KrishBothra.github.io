@@ -1,5 +1,5 @@
 ---
-title: "Screen Machine:<br>Pre-Snap Play Prediction in the NFL"
+title: "Screen Time:<br>Pre-Snap Play Prediction in the NFL"
 subtitle: "External Advisor: Dr. Karim Kassam"
 author: "Krish Bothra, Ethan Larimore, Jenna Lau"
 format: 
